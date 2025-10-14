@@ -10,10 +10,37 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center gradient-bg overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/20 rounded-full blur-3xl"></div>
+      {/* Grid pattern background */}
+      <div className="absolute inset-0">
+        {/* Grid lines */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(229, 181, 52, 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(229, 181, 52, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }}
+        />
+
+        {/* Glowing intersections */}
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 0px 0px, rgba(229, 181, 52, 0.4) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }}
+        />
+
+        {/* Spotlight effect */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background opacity-60"></div>
+
+        {/* Additional glow spots */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
