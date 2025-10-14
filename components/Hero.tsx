@@ -51,8 +51,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-10 leading-relaxed">
-          Building intelligent applications with cutting-edge AI, modern web technologies,
-          and scalable cloud architecture
+          Building intelligent, scalable applications with cutting-edge AI and modern cloud architecture
         </p>
 
         <button

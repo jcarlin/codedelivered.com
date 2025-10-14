@@ -151,7 +151,7 @@ To add new sections, create a component in `components/` and import it in `app/p
 
 ## License
 
-© 2025 CodeDelivered LLC. All rights reserved.
+© 2026 CodeDelivered LLC. All rights reserved.
 
 ## Support
 
