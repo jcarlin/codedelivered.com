@@ -9,7 +9,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center gradient-bg overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center gradient-bg overflow-hidden snap-start snap-always">
       {/* Grid pattern background */}
       <div className="absolute inset-0">
         {/* Grid lines */}

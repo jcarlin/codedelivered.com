@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="snap-y snap-mandatory h-screen overflow-y-auto">
       <Hero />
       <Services />
       <Projects />
