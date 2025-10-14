@@ -20,7 +20,7 @@ export const PROJECTS = [
   {
     name: 'AI-Powered Analytics Dashboard',
     description: 'Real-time analytics platform with LLM-powered insights and natural language queries',
-    techStack: ['Next.js', 'OpenAI', 'PostgreSQL', 'AWS'],
+    techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
     image: '/projects/vault-ai.png',
   },
   {
@@ -30,9 +30,9 @@ export const PROJECTS = [
     image: '/projects/deagle-ai.png',
   },
   {
-    name: 'Boston Scientific Clinical Trials - FP&A',
-    description: 'Enterprise financial planning and analysis platform for clinical trial management',
-    techStack: ['Nest.js', 'Next.js', 'Angular 20', 'AWS'],
+    name: 'Boston Scientific - Compass',
+    description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration',
+    techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
     image: '/projects/bsci-compass.png',
   },
 ]
