@@ -2,7 +2,7 @@ import { SOCIAL_LINKS } from '@/lib/constants'
 
 export default function Footer() {
   return (
-    <footer className="bg-surface py-12">
+    <footer className="bg-surface py-12 snap-start">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-text-secondary text-sm">
