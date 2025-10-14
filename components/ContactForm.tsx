@@ -108,7 +108,7 @@ export default function ContactForm() {
       </button>
 
       {formState === 'success' && (
-        <p className="text-gold text-center">Thanks! I'll get back to you within 24 hours.</p>
+        <p className="text-gold text-center">Thanks! I&apos;ll get back to you within 24 hours.</p>
       )}
 
       {formState === 'error' && (
