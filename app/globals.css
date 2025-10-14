@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface/50 backdrop-blur-sm border border-white/10 rounded-lg;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass-card:hover {
+    @apply border-gold/50 shadow-lg shadow-gold/20;
+    transform: translateY(-4px);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+  }
+
+  .tech-badge {
+    @apply px-3 py-1 text-xs font-medium bg-gold/10 text-gold border border-gold/30 rounded-full;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gold text-black font-semibold rounded-lg transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-lg shadow-gold/50 scale-105 brightness-110;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
