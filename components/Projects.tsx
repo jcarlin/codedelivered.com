@@ -16,6 +16,7 @@ export default function Projects() {
               name={project.name}
               description={project.description}
               techStack={project.techStack}
+              image={project.image}
               delay={index * 100}
             />
           ))}

@@ -21,16 +21,19 @@ export const PROJECTS = [
     name: 'AI-Powered Analytics Dashboard',
     description: 'Real-time analytics platform with LLM-powered insights and natural language queries',
     techStack: ['Next.js', 'OpenAI', 'PostgreSQL', 'AWS'],
+    image: '/projects/vault-ai.png',
   },
   {
     name: 'Enterprise RAG System',
     description: 'Document intelligence system enabling semantic search across company knowledge base',
     techStack: ['LangGraph', 'vLLM', 'LiteLLM', 'LlamaIndex', 'Milvus', 'FastAPI', 'React', 'Celery', 'Redis', 'PostgreSQL', 'Neo4j', 'MinIO'],
+    image: '/projects/deagle-ai.png',
   },
   {
     name: 'Boston Scientific Clinical Trials - FP&A',
     description: 'Enterprise financial planning and analysis platform for clinical trial management',
     techStack: ['Nest.js', 'Next.js', 'Angular 20', 'AWS'],
+    image: '/projects/bsci-compass.png',
   },
 ]
 
