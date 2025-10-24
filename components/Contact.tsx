@@ -2,7 +2,7 @@ import ContactForm from './ContactForm'
 
 export default function Contact() {
   return (
-    <section id="contact" className="pt-20 pb-14 md:pt-40 md:pb-22 bg-background snap-start min-h-screen">
+    <section id="contact" className="pt-20 pb-14 md:pt-40 md:pb-22 bg-background min-h-screen">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Let&apos;s <span className="text-gold">Build Together</span>

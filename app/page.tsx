@@ -9,10 +9,10 @@ import Footer from '@/components/Footer'
 export default function Home() {
   return (
     <DesktopOS>
-      <main className="snap-y snap-proximity min-h-screen overflow-y-auto pb-14">
+      <main className="min-h-screen overflow-y-auto pb-14">
         <Hero />
         {/* Combined Services & Projects Section */}
-        <div className="bg-background snap-start min-h-screen">
+        <div className="bg-background min-h-screen">
           <Services />
           <Projects />
         </div>

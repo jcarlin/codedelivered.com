@@ -45,7 +45,7 @@ export default function EditorStack() {
   const packages = currentView === 'python' ? PYTHON_PACKAGES : JAVASCRIPT_PACKAGES
 
   return (
-    <section id="stack" className="py-20 md:py-32 snap-start">
+    <section id="stack" className="py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           What&apos;s in my <span className="text-gold">editor</span> right now

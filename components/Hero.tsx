@@ -9,7 +9,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden snap-start snap-always" style={{ minHeight: 'calc(100vh - 1.75rem)' }}>
+    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 'calc(100vh - 1.75rem)' }}>
       {/* Full-screen window overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
 
