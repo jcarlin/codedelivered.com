@@ -16,7 +16,11 @@
   /* Desktop background - landscape optimized */
   @media (min-width: 768px) {
     body {
-      background: url('/projects/desktop-background-desktop.jpg?v=2') center/cover fixed no-repeat;
+      background-image: url('/projects/desktop-background-desktop.jpg?v=2');
+      background-position: center 10%;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       background-color: #1e293b;
     }
   }
