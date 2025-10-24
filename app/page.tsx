@@ -11,8 +11,11 @@ export default function Home() {
     <DesktopOS>
       <main className="snap-y snap-proximity min-h-screen overflow-y-auto pb-14">
         <Hero />
-        <Services />
-        <Projects />
+        {/* Combined Services & Projects Section */}
+        <div className="bg-background snap-start min-h-screen">
+          <Services />
+          <Projects />
+        </div>
         <EditorStack />
         <Contact />
       </main>

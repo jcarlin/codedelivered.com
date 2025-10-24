@@ -3,9 +3,9 @@ import ServiceCard from './ServiceCard'
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 md:py-32 bg-background snap-start">
+    <section id="services" className="pt-10 md:pt-16 pb-5 md:pb-8">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
           What I <span className="text-gold">Build</span>
         </h2>
 
