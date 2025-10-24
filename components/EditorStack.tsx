@@ -123,7 +123,7 @@ export default function EditorStack() {
                         <span className="text-green-300">&quot;{pkg.name}&quot;</span>
                         <span className="text-green-400/80">: &quot;{pkg.version}&quot;</span>
                         {index < packages.length - 1 && ','}
-                        <span className="text-green-400/50 ml-4">// {pkg.description}</span>
+                        <span className="text-green-400/50 ml-4">{'// '}{pkg.description}</span>
                       </div>
                     ))}
                     <div className="text-green-400/60 ml-4">{'}'}</div>
