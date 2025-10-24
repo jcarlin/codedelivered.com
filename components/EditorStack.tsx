@@ -10,7 +10,7 @@ export default function EditorStack() {
   const [isPaused, setIsPaused] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  // Rotate between views every 10 seconds
+  // Rotate between views every 7 seconds
   useEffect(() => {
     if (isPaused) return
 
@@ -20,7 +20,7 @@ export default function EditorStack() {
         setCurrentView((prev) => (prev === 'python' ? 'javascript' : 'python'))
         setIsVisible(true)
       }, 300) // Wait for fade out before switching
-    }, 10000)
+    }, 7000)
 
     return () => clearInterval(interval)
   }, [isPaused])
@@ -50,7 +50,7 @@ export default function EditorStack() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           What&apos;s in my <span className="text-gold">editor</span> right now
         </h2>
-        <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-black text-center mb-12 max-w-2xl mx-auto font-medium">
           A glimpse into the tools and frameworks I&apos;m actively working with
         </p>
 
@@ -93,7 +93,7 @@ export default function EditorStack() {
             </div>
 
             {/* Terminal Content */}
-            <div className="relative p-6 font-mono text-sm md:text-base overflow-x-auto">
+            <div className="relative p-6 font-mono text-sm md:text-base overflow-x-auto min-h-[400px]">
               {/* Scanline effect */}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-green-500/5 to-transparent animate-pulse"></div>
 
@@ -135,11 +135,6 @@ export default function EditorStack() {
                 <div className="inline-block w-2 h-5 bg-green-400 animate-pulse ml-1"></div>
               </div>
             </div>
-          </div>
-
-          {/* Interaction hint */}
-          <div className="text-center mt-4 text-text-secondary text-sm">
-            {isPaused ? 'Auto-rotation stopped' : 'Click tabs to switch • Hover to pause • Auto-rotates every 10s'}
           </div>
         </div>
       </div>

@@ -6,7 +6,10 @@
 
 @layer base {
   body {
-    @apply bg-background text-text-primary font-sans antialiased;
+    @apply text-text-primary font-sans antialiased;
+    background: url('/projects/desktop-background.jpg') center/cover fixed no-repeat;
+    /* Fallback gradient if image doesn't load */
+    background-color: #1e293b;
   }
 
   html {
@@ -73,5 +76,29 @@
       opacity: 1;
       transform: scale(1);
     }
+  }
+
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 20s ease-in-out infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
 }

@@ -1,3 +1,4 @@
+import DesktopOS from '@/components/DesktopOS'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Projects from '@/components/Projects'
@@ -7,13 +8,15 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="snap-y snap-proximity h-screen overflow-y-auto">
-      <Hero />
-      <Services />
-      <Projects />
-      <EditorStack />
-      <Contact />
+    <DesktopOS>
+      <main className="snap-y snap-proximity min-h-screen overflow-y-auto pb-14">
+        <Hero />
+        <Services />
+        <Projects />
+        <EditorStack />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </DesktopOS>
   )
 }
