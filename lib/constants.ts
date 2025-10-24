@@ -42,3 +42,36 @@ export const SOCIAL_LINKS = {
   github: 'https://github.com/jcarlin',
   email: 'info@codedelivered.com',
 }
+
+export const PYTHON_PACKAGES = [
+  { name: 'fastapi', version: '==0.120', description: 'Core API framework' },
+  { name: 'llama-index', version: '>=0.14', description: 'RAG orchestration engine' },
+  { name: 'pymilvus', version: '==2.6', description: 'Vector database client' },
+  { name: 'openai', version: '==2.6', description: 'OpenAI LLM provider' },
+  { name: 'unstructured', version: '==0.18', description: 'Document processing (30+ formats)' },
+  { name: 'sqlalchemy', version: '==2.0', description: 'Database ORM' },
+  { name: 'asyncpg', version: '==0.30', description: 'Async PostgreSQL driver' },
+  { name: 'celery', version: '==5.5', description: 'Async task queue' },
+  { name: 'redis', version: '==7.0', description: 'Cache & message broker' },
+  { name: 'opensearch-py', version: '==3.0.0', description: 'Full-text search engine' },
+  { name: 'uvicorn[standard]', version: '==0.38', description: 'ASGI server' },
+  { name: 'opentelemetry-sdk', version: '==1.38', description: 'Observability & tracing' },
+  { name: 'litellm', version: '==1.78', description: 'Multi-LLM provider proxy' },
+  { name: 'google-genai', version: '==0.1', description: 'Google Gemini SDK' },
+]
+
+export const JAVASCRIPT_PACKAGES = [
+  { name: 'next', version: '^16.0', description: 'React framework for production' },
+  { name: 'react', version: '^19.2', description: 'UI component library' },
+  { name: 'typescript', version: '^5.9', description: 'Type-safe JavaScript' },
+  { name: '@angular/core', version: '^19.2', description: 'Enterprise web framework' },
+  { name: '@angular/material', version: '^20.2', description: 'Material Design components' },
+  { name: '@nestjs/core', version: '^11.1', description: 'Node.js framework' },
+  { name: '@nx/workspace', version: '^21.5', description: 'Monorepo management' },
+  { name: 'ag-grid-angular', version: '^34.3', description: 'Enterprise data grid' },
+  { name: 'graphql', version: '^16.11', description: 'Query language for APIs' },
+  { name: 'typeorm', version: '^0.3.27', description: 'TypeScript ORM' },
+  { name: 'pg', version: '^8.16', description: 'PostgreSQL client for Node.js' },
+  { name: 'passport-jwt', version: '^4.0', description: 'JWT authentication strategy' },
+  { name: '@playwright/test', version: '^1.56', description: 'End-to-end testing' },
+]

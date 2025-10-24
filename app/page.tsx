@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Projects from '@/components/Projects'
+import EditorStack from '@/components/EditorStack'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Projects />
+      <EditorStack />
       <Contact />
       <Footer />
     </main>
