@@ -7,9 +7,18 @@
 @layer base {
   body {
     @apply text-text-primary font-sans antialiased;
-    background: url('/projects/desktop-background.jpg') center/cover fixed no-repeat;
+    /* Mobile background - portrait optimized */
+    background: url('/projects/desktop-background-mobile.jpg') center/cover fixed no-repeat;
     /* Fallback gradient if image doesn't load */
     background-color: #1e293b;
+  }
+
+  /* Desktop background - landscape optimized */
+  @media (min-width: 768px) {
+    body {
+      background: url('/projects/desktop-background-desktop.jpg') center/cover fixed no-repeat;
+      background-color: #1e293b;
+    }
   }
 
   html {
