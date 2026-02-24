@@ -8,7 +8,10 @@
   body {
     @apply text-text-primary font-sans antialiased;
     /* Mobile background - portrait optimized */
-    background: url('/projects/desktop-background-mobile.jpg?v=4') center/cover fixed no-repeat;
+    /* Note: background-attachment: fixed is intentionally omitted on mobile */
+    /* because iOS Safari does not support it and causes images to not resize properly */
+    background: url('/projects/desktop-background-mobile.jpg?v=5') center/cover no-repeat;
+    background-attachment: scroll;
     /* Fallback gradient if image doesn't load */
     background-color: #1e293b;
   }
