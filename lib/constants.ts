@@ -58,6 +58,10 @@ export const PYTHON_PACKAGES = [
   { name: 'opentelemetry-sdk', version: '==1.38', description: 'Observability & tracing' },
   { name: 'litellm', version: '==1.78', description: 'Multi-LLM provider proxy' },
   { name: 'google-genai', version: '==0.1', description: 'Google Gemini SDK' },
+  { name: 'torch', version: '==2.10', description: 'PyTorch deep learning framework' },
+  { name: 'tensorflow', version: '==2.20', description: 'ML framework for training & inference' },
+  { name: 'vllm', version: '==0.15', description: 'High-throughput LLM serving engine' },
+  { name: 'cuda-toolkit', version: '==13.1', description: 'NVIDIA GPU compute platform' },
 ]
 
 export const JAVASCRIPT_PACKAGES = [
