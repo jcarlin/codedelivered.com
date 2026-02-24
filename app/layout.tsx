@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import BackgroundImage from '@/components/BackgroundImage'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -109,7 +110,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <BackgroundImage />
+        {children}
+      </body>
     </html>
   )
 }

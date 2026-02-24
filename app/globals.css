@@ -7,22 +7,9 @@
 @layer base {
   body {
     @apply text-text-primary font-sans antialiased;
-    /* Mobile background - portrait optimized */
-    background: url('/projects/desktop-background-mobile.jpg?v=4') center/cover fixed no-repeat;
-    /* Fallback gradient if image doesn't load */
+    /* Background is handled by a fixed-position element in layout.tsx */
+    /* because CSS background-image on body is unreliable on iOS Safari */
     background-color: #1e293b;
-  }
-
-  /* Desktop background - landscape optimized */
-  @media (min-width: 768px) {
-    body {
-      background-image: url('/projects/desktop-background-desktop.jpg?v=2');
-      background-position: center 10%;
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-color: #1e293b;
-    }
   }
 
   html {
