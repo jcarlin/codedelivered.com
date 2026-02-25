@@ -47,7 +47,7 @@ export const PYTHON_PACKAGES = [
   { name: 'fastapi', version: '==0.120', description: 'Core API framework' },
   { name: 'llama-index', version: '>=0.14', description: 'RAG orchestration engine' },
   { name: 'pymilvus', version: '==2.6', description: 'Vector database client' },
-  { name: 'openai', version: '==2.6', description: 'OpenAI LLM provider' },
+  { name: 'openai', version: '==2.23', description: 'OpenAI LLM provider' },
   { name: 'unstructured', version: '==0.18', description: 'Document processing (30+ formats)' },
   { name: 'sqlalchemy', version: '==2.0', description: 'Database ORM' },
   { name: 'asyncpg', version: '==0.30', description: 'Async PostgreSQL driver' },
@@ -58,6 +58,12 @@ export const PYTHON_PACKAGES = [
   { name: 'opentelemetry-sdk', version: '==1.38', description: 'Observability & tracing' },
   { name: 'litellm', version: '==1.78', description: 'Multi-LLM provider proxy' },
   { name: 'google-genai', version: '==0.1', description: 'Google Gemini SDK' },
+  { name: 'torch', version: '==2.10', description: 'PyTorch deep learning framework' },
+  { name: 'tensorflow', version: '==2.20', description: 'ML framework for training & inference' },
+  { name: 'vllm', version: '==0.15', description: 'High-throughput LLM serving engine' },
+  { name: 'cuda-toolkit', version: '==13.1', description: 'NVIDIA GPU compute platform' },
+  { name: 'stripe', version: '==14.3', description: 'Payment processing platform' },
+  { name: 'twilio', version: '==9.10', description: 'Communications API (SMS, voice)' },
 ]
 
 export const JAVASCRIPT_PACKAGES = [
