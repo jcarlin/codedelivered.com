@@ -18,10 +18,10 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
-    name: 'AI-Powered Analytics Dashboard',
+    name: 'Vault AI Systems',
     description: 'Real-time analytics platform with LLM-powered insights and natural language queries',
     techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
-    image: '/projects/vault-ai.png',
+    image: '/projects/vault-ai-1.png',
   },
   {
     name: 'Enterprise RAG System',
