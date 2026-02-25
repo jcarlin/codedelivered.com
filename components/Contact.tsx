@@ -8,7 +8,7 @@ export default function Contact() {
           Let&apos;s <span className="text-gold">Build Together</span>
         </h2>
         <p className="text-text-secondary text-center mb-12">
-          Have a project in mind? Get in touch and let&apos;s discuss how I can help.
+          Have a project in mind? Get in touch and let&apos;s discuss how our team can help bring it to life.
         </p>
 
         <div className="glass-card p-8 md:p-10">

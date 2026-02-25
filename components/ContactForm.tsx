@@ -95,7 +95,7 @@ export default function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 bg-surface border border-white/10 rounded-lg focus:outline-none focus:border-gold/50 transition-colors resize-none"
-          placeholder="Tell me about your project..."
+          placeholder="Tell us about your project..."
         />
       </div>
 
@@ -108,11 +108,11 @@ export default function ContactForm() {
       </button>
 
       {formState === 'success' && (
-        <p className="text-gold text-center">Thanks! I&apos;ll get back to you within 24 hours.</p>
+        <p className="text-gold text-center">Thanks! We&apos;ll get back to you within 24 hours.</p>
       )}
 
       {formState === 'error' && (
-        <p className="text-red-500 text-center">Something went wrong. Please try again or email me directly.</p>
+        <p className="text-red-500 text-center">Something went wrong. Please try again or email us directly.</p>
       )}
     </form>
   )

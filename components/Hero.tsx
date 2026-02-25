@@ -21,7 +21,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-black max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
-          Building intelligent, scalable applications with modern cloud architecture
+          A US-led team with top nearshore talent building intelligent, scalable applications — delivered on time, in your time zone
         </p>
 
         <button
