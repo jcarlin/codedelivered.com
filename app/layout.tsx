@@ -4,8 +4,8 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'CodeDelivered LLC | AI Engineering & Full-Stack Development',
-  description: 'Expert AI engineering, full-stack development, and cloud architecture services. Building intelligent applications with cutting-edge AI, modern web technologies, and scalable cloud infrastructure.',
-  keywords: 'AI engineering, LLM development, RAG systems, full-stack development, Next.js, cloud architecture, AWS, consulting',
+  description: 'US-led AI engineering and full-stack development with top nearshore talent. We build intelligent applications with cutting-edge AI, modern web technologies, and scalable cloud infrastructure — flexible teams that scale with your project.',
+  keywords: 'AI engineering, LLM development, RAG systems, full-stack development, nearshore development, nearshore software team, Next.js, cloud architecture, AWS, consulting, staff augmentation',
   authors: [{ name: 'CodeDelivered LLC' }],
   creator: 'CodeDelivered LLC',
   publisher: 'CodeDelivered LLC',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'CodeDelivered LLC | AI Engineering & Full-Stack Development',
-    description: 'Expert AI engineering and full-stack development services. Building intelligent applications with modern technologies.',
+    description: 'US-led AI engineering and full-stack development with top nearshore talent. Flexible teams that scale with your project.',
     url: 'https://codedelivered.com',
     siteName: 'CodeDelivered LLC',
     locale: 'en_US',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'CodeDelivered LLC | AI Engineering & Full-Stack Development',
-    description: 'Expert AI engineering and full-stack development services.',
+    description: 'US-led AI engineering and full-stack development with nearshore talent.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -61,7 +61,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'CodeDelivered LLC',
-    description: 'Expert AI engineering, full-stack development, and cloud architecture services.',
+    description: 'US-led AI engineering, full-stack development, and cloud architecture with top nearshore talent. Flexible teams that scale with your project.',
     url: 'https://codedelivered.com',
     logo: 'https://codedelivered.com/icon.svg',
     image: 'https://codedelivered.com/og-image.png',
@@ -87,6 +87,8 @@ export default function RootLayout({
       'Full-Stack Development',
       'Cloud Architecture',
       'Software Consulting',
+      'Nearshore Software Development',
+      'Staff Augmentation',
     ],
     knowsAbout: [
       'Artificial Intelligence',

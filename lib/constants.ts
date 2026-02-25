@@ -1,17 +1,17 @@
 export const SERVICES = [
   {
     title: 'AI Engineering',
-    description: 'Custom LLM applications, RAG systems, and intelligent automation that transform how businesses operate',
+    description: 'Custom LLM applications, RAG systems, and intelligent automation — built by engineers who live and breathe AI, every day',
     techStack: ['vLLM', 'OpenAI', 'Anthropic', 'LangChain', 'Vector DBs', 'Python'],
   },
   {
     title: 'Full-Stack Development',
-    description: 'Modern, scalable web applications built with cutting-edge frameworks and best practices',
+    description: 'Modern, scalable web applications built by our US and nearshore engineers — scale the team up or down as your project demands',
     techStack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL'],
   },
   {
     title: 'Cloud & DevOps',
-    description: 'Robust cloud infrastructure, CI/CD pipelines, and automated deployment workflows',
+    description: 'Robust cloud infrastructure, CI/CD pipelines, and automated deployment workflows — managed end-to-end so you ship faster',
     techStack: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform'],
   },
 ]
