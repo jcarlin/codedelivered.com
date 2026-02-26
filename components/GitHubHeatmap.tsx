@@ -1,29 +1,44 @@
 'use client'
 
-import { useRef, useEffect, useCallback } from 'react'
+import { useRef, useEffect } from 'react'
 import { GitHubCalendar } from 'react-github-calendar'
 
 export default function GitHubHeatmap() {
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const scrollToRight = useCallback(() => {
-    const el = scrollRef.current
-    if (el) {
-      el.scrollLeft = el.scrollWidth
-    }
-  }, [])
-
   useEffect(() => {
-    // Scroll to right once the calendar renders
-    scrollToRight()
-
-    // Also observe for DOM changes in case the calendar loads async
     const el = scrollRef.current
     if (!el) return
-    const observer = new MutationObserver(scrollToRight)
-    observer.observe(el, { childList: true, subtree: true })
-    return () => observer.disconnect()
-  }, [scrollToRight])
+
+    // ResizeObserver fires after layout, so scrollWidth is accurate
+    const observer = new ResizeObserver(() => {
+      if (el.scrollWidth > el.clientWidth) {
+        el.scrollLeft = el.scrollWidth
+      }
+    })
+
+    // Observe the first child (the calendar) for size changes when data loads
+    const watchChild = () => {
+      const child = el.firstElementChild
+      if (child) {
+        observer.observe(child)
+      }
+    }
+
+    watchChild()
+
+    // In case the calendar element hasn't mounted yet
+    const mutation = new MutationObserver(() => {
+      watchChild()
+      mutation.disconnect()
+    })
+    mutation.observe(el, { childList: true })
+
+    return () => {
+      observer.disconnect()
+      mutation.disconnect()
+    }
+  }, [])
 
   return (
     <section id="github" className="py-20 md:py-32">
