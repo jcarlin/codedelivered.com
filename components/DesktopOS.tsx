@@ -11,38 +11,27 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
     return () => clearInterval(timer)
   }, [])
 
-  // Fetch weather based on user's geolocation
+  // Fetch weather via IP-based geolocation (no browser prompt)
   useEffect(() => {
-    const fetchWeather = async (lat: number, lon: number) => {
+    const fetchWeather = async () => {
       try {
-        const res = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m&temperature_unit=fahrenheit`
+        const geoRes = await fetch('https://ipapi.co/json/')
+        const geo = await geoRes.json()
+        if (!geo.latitude || !geo.longitude) return
+
+        const weatherRes = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${geo.latitude}&longitude=${geo.longitude}&current=temperature_2m&temperature_unit=fahrenheit`
         )
-        const data = await res.json()
-        if (data.current?.temperature_2m != null) {
-          setTemp(Math.round(data.current.temperature_2m))
+        const weather = await weatherRes.json()
+        if (weather.current?.temperature_2m != null) {
+          setTemp(Math.round(weather.current.temperature_2m))
         }
       } catch {
         // Silently fail — temp just won't show
       }
     }
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (pos) => fetchWeather(pos.coords.latitude, pos.coords.longitude),
-        () => {
-          // Permission denied or error — try IP-based fallback
-          fetch('https://ipapi.co/json/')
-            .then(res => res.json())
-            .then(data => {
-              if (data.latitude && data.longitude) {
-                fetchWeather(data.latitude, data.longitude)
-              }
-            })
-            .catch(() => {})
-        }
-      )
-    }
+    fetchWeather()
   }, [])
 
   const formatTime = (date: Date) => {
