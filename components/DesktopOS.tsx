@@ -4,7 +4,13 @@ import { useState, useEffect } from 'react'
 
 export default function DesktopOS({ children }: { children: React.ReactNode }) {
   const [time, setTime] = useState(new Date())
-  const [temp, setTemp] = useState<number | null>(null)
+  const [temp, setTemp] = useState<number | null>(() => {
+    if (typeof window !== 'undefined') {
+      const cached = localStorage.getItem('cachedTemp')
+      return cached ? Number(cached) : null
+    }
+    return null
+  })
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
@@ -24,7 +30,9 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
         )
         const weather = await weatherRes.json()
         if (weather.current?.temperature_2m != null) {
-          setTemp(Math.round(weather.current.temperature_2m))
+          const rounded = Math.round(weather.current.temperature_2m)
+          setTemp(rounded)
+          localStorage.setItem('cachedTemp', String(rounded))
         }
       } catch {
         // Silently fail — temp just won't show
