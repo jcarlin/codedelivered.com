@@ -43,12 +43,19 @@ export default function GitHubHeatmap() {
   return (
     <section id="github" className="py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          <span className="text-gold">GitHub</span> Contributions
-        </h2>
-        <p className="text-black text-center mb-12 max-w-2xl mx-auto font-medium">
-          Live contribution activity — updated automatically from GitHub
-        </p>
+        <a
+          href="https://github.com/jcarlin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block group"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 group-hover:text-gold transition-colors duration-200">
+            <span className="text-gold">GitHub</span> Contributions
+          </h2>
+          <p className="text-black text-center mb-12 max-w-2xl mx-auto font-medium">
+            Live contribution activity — updated automatically from GitHub
+          </p>
+        </a>
 
         <div className="flex justify-center">
           <div
