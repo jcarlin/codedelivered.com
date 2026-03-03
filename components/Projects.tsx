@@ -13,10 +13,7 @@ export default function Projects() {
           {PROJECTS.map((project, index) => (
             <ProjectCard
               key={index}
-              name={project.name}
-              description={project.description}
-              techStack={project.techStack}
-              image={project.image}
+              {...project}
               delay={index * 100}
             />
           ))}

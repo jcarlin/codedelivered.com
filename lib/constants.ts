@@ -35,6 +35,14 @@ export const PROJECTS = [
     techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
     image: '/projects/bsci-compass.png',
   },
+  {
+    name: 'Wine Shelf Scanner',
+    description: 'AI-powered wine identification app that scans store shelves and overlays ratings from 191K+ wines instantly',
+    techStack: ['Next.js', 'SwiftUI', 'FastAPI', 'Google Cloud Vision', 'Claude AI', 'SQLite'],
+    image: '/projects/wine-scanner-app.png',
+    url: 'https://wine-shelf-scanner.vercel.app/',
+    github: 'https://github.com/jcarlin/wine-shelf-scanner',
+  },
 ]
 
 export const SOCIAL_LINKS = {
