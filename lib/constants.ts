@@ -38,6 +38,13 @@ export const PROJECTS = [
     url: 'https://compass.bsci.com',
   },
   {
+    name: 'NEXUS',
+    description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 50,000+ pages of mixed-format legal documents',
+    techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
+    image: '/projects/NEXUS.png',
+    github: 'https://github.com/jcarlin/NEXUS',
+  },
+  {
     name: 'Wine Shelf Scanner',
     description: 'AI-powered wine identification app that scans store shelves and overlays ratings from 191K+ wines instantly',
     techStack: ['Next.js', 'SwiftUI', 'FastAPI', 'Google Cloud Vision', 'Claude AI', 'SQLite'],
