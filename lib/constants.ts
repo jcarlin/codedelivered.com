@@ -22,6 +22,7 @@ export const PROJECTS = [
     description: 'Real-time analytics platform with LLM-powered insights and natural language queries',
     techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
     image: '/projects/vault-ai-1.png',
+    url: 'https://vault-ai-frontend.vercel.app/',
   },
   {
     name: 'Enterprise RAG System',
@@ -34,6 +35,7 @@ export const PROJECTS = [
     description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration',
     techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
     image: '/projects/bsci-compass.png',
+    url: 'https://compass.bsci.com',
   },
   {
     name: 'Wine Shelf Scanner',
