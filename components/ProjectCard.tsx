@@ -76,7 +76,7 @@ export default function ProjectCard({ name, description, techStack, image, url, 
         {/* Content Section */}
         <div className="p-6">
           <h4 className="text-xl font-bold mb-3 text-text-primary">{name}</h4>
-          <p className="text-text-primary mb-4 text-sm leading-relaxed">{description}</p>
+          <p className="text-text-secondary mb-4 text-sm leading-relaxed">{description}</p>
           <div className="flex flex-wrap gap-2">
             {techStack.map((tech) => (
               <span key={tech} className="tech-badge text-xs">
