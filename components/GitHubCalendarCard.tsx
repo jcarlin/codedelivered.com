@@ -47,24 +47,26 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
     <div className="w-full flex flex-col items-center">
       <a
         href={profileUrl}
-        target="_blank"
         rel="noopener noreferrer"
         className="text-sm font-medium text-secondary hover:text-gold transition-colors duration-200 mb-3"
       >
         {label} — @{username}
       </a>
-      <div
-        ref={scrollRef}
-        className="glass-card p-6 md:p-8 inline-block overflow-x-auto max-w-full"
+      <a
+        href={profileUrl}
+        rel="noopener noreferrer"
+        className="glass-card p-6 md:p-8 inline-block max-w-full cursor-pointer hover:border-gold/40 transition-all duration-300"
       >
-        <GitHubCalendar
-          username={username}
-          colorScheme="dark"
-          blockSize={14}
-          blockMargin={4}
-          fontSize={14}
-        />
-      </div>
+        <div ref={scrollRef} className="overflow-x-auto">
+          <GitHubCalendar
+            username={username}
+            colorScheme="dark"
+            blockSize={14}
+            blockMargin={4}
+            fontSize={14}
+          />
+        </div>
+      </a>
     </div>
   )
 }
