@@ -37,7 +37,7 @@ export default function ServiceCard({ title, description, techStack }: ServiceCa
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
-      <h3 className="text-2xl font-bold mb-4 text-gold">{title}</h3>
+      <h3 className="text-2xl font-bold mb-4 text-text-primary">{title}</h3>
       <p className="text-text-secondary mb-6 leading-relaxed">{description}</p>
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech) => (
