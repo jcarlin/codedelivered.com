@@ -25,12 +25,6 @@ export const PROJECTS = [
     url: 'https://vault-ai-frontend.vercel.app/',
   },
   {
-    name: 'Enterprise RAG System',
-    description: 'Document intelligence system enabling semantic search across company knowledge base',
-    techStack: ['LangGraph', 'vLLM', 'LiteLLM', 'LlamaIndex', 'Milvus', 'FastAPI', 'React', 'Celery', 'Redis', 'PostgreSQL', 'Neo4j', 'MinIO'],
-    image: '/projects/deagle-ai.png',
-  },
-  {
     name: 'Boston Scientific - Compass',
     description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration',
     techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
@@ -42,6 +36,7 @@ export const PROJECTS = [
     description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 50,000+ pages of mixed-format legal documents',
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
     image: '/projects/NEXUS.png',
+    url: 'https://nexus-alpha-swart.vercel.app/',
     github: 'https://github.com/jcarlin/NEXUS',
   },
   {
