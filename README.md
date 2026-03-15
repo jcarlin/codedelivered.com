@@ -1,23 +1,36 @@
 # CodeDelivered.com
 
-Modern, dark-themed landing page for CodeDelivered LLC - AI Engineering & Full-Stack Development consultancy.
+Modern, dark-themed landing page for CodeDelivered LLC — a US-led AI engineering & full-stack development consultancy with nearshore talent.
 
 ## Tech Stack
 
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first styling
-- **Web3Forms** - Contact form backend (free)
+- **Next.js 14** — React framework with App Router
+- **TypeScript** — Type-safe development
+- **Tailwind CSS** — Utility-first styling
+- **Web3Forms** — Contact form backend (free)
+- **react-github-calendar** — Live GitHub contribution heatmaps
+
+## Features
+
+- Dark theme with warm gold (#E5B534) accents
+- Fully responsive (mobile, tablet, desktop)
+- Smooth scroll animations with Intersection Observer
+- **EditorStack** — Terminal-style tech stack display rotating between Python and JS packages
+- **GitHub Contributions** — Live heatmap integration with dual profiles and mobile auto-scroll
+- **DesktopOS Menu Bar** — macOS-style top bar with live clock, date, and IP-based temperature
+- **Project Portfolio** — Cards with live demo links, GitHub links, and full-screen image modal
+- **Background Images** — Fixed-position with separate mobile/desktop variants
+- SEO optimized (JSON-LD, Open Graph, Twitter Cards, robots.txt, sitemap)
+- AI crawler friendly (GPTBot, Claude-Web, PerplexityBot explicitly allowed)
+- Hover effects on cards and buttons
+- Fast loading with minimal dependencies
 
 ## Getting Started
 
 ### Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
 ```
 
@@ -34,7 +47,7 @@ npm start
 
 ### 1. Update Social Links
 
-Edit `lib/constants.ts` and update your social media links:
+Edit `lib/constants.ts`:
 
 ```typescript
 export const SOCIAL_LINKS = {
@@ -58,9 +71,53 @@ The contact form uses [Web3Forms](https://web3forms.com) (free, no signup needed
 ### 3. Customize Content
 
 Edit `lib/constants.ts` to update:
-- Services/expertise descriptions
-- Project portfolio items
-- Tech stack badges
+- `SERVICES` — Expertise areas and descriptions
+- `PROJECTS` — Portfolio items with images, links, and tech stacks
+- `PYTHON_PACKAGES` — Python tech stack displayed in EditorStack
+- `JAVASCRIPT_PACKAGES` — JS/TS tech stack displayed in EditorStack
+
+## Project Structure
+
+```
+codedelivered.com/
+├── app/
+│   ├── layout.tsx              # Root layout, metadata, JSON-LD
+│   ├── page.tsx                # Main landing page
+│   ├── globals.css             # Tailwind + custom styles & animations
+│   ├── robots.ts               # SEO robots configuration
+│   └── sitemap.ts              # Sitemap generation
+├── components/
+│   ├── Hero.tsx                # Hero section with CTA
+│   ├── Services.tsx            # Services grid container
+│   ├── ServiceCard.tsx         # Service card with scroll animation
+│   ├── Projects.tsx            # Featured projects grid
+│   ├── ProjectCard.tsx         # Project card with image modal & links
+│   ├── Contact.tsx             # Contact section wrapper
+│   ├── ContactForm.tsx         # Web3Forms form with spam protection
+│   ├── EditorStack.tsx         # Terminal-style package display
+│   ├── GitHubHeatmap.tsx       # GitHub contributions section
+│   ├── GitHubCalendarCard.tsx  # Individual heatmap with ResizeObserver
+│   ├── DesktopOS.tsx           # macOS menu bar (clock, temp)
+│   ├── BackgroundImage.tsx     # Fixed background (mobile/desktop)
+│   ├── ImageModal.tsx          # Full-screen image viewer
+│   └── Footer.tsx              # Fixed footer with social links
+├── lib/
+│   └── constants.ts            # All content & configuration data
+├── public/
+│   └── projects/               # Project screenshots & backgrounds
+├── tailwind.config.ts          # Custom colors & font config
+├── next.config.js              # Next.js configuration
+├── tsconfig.json               # TypeScript config with path aliases
+└── CLAUDE.md                   # Project specification
+```
+
+## Architecture
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system architecture and component relationships.
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for the maturity advancement plan and future direction.
 
 ## Deployment
 
@@ -68,57 +125,15 @@ Edit `lib/constants.ts` to update:
 
 1. Push your code to GitHub
 2. Go to [vercel.com](https://vercel.com)
-3. Click "Import Project"
-4. Select your repository
-5. Vercel will auto-detect Next.js - click Deploy
-6. Configure your domain (codedelivered.com) in Vercel settings
+3. Click "Import Project" and select your repository
+4. Vercel auto-detects Next.js — click Deploy
+5. Configure your domain (codedelivered.com) in Vercel settings
 
-### Deploy to Other Platforms
-
-The site can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
-
-## Project Structure
-
-```
-├── app/
-│   ├── layout.tsx       # Root layout with metadata
-│   ├── page.tsx         # Main landing page
-│   └── globals.css      # Global styles + Tailwind
-├── components/
-│   ├── Hero.tsx         # Hero section
-│   ├── Services.tsx     # Services section
-│   ├── ServiceCard.tsx  # Service card component
-│   ├── Projects.tsx     # Projects section
-│   ├── ProjectCard.tsx  # Project card component
-│   ├── Contact.tsx      # Contact section
-│   ├── ContactForm.tsx  # Contact form
-│   └── Footer.tsx       # Footer
-├── lib/
-│   └── constants.ts     # Content configuration
-└── public/
-    └── favicon.ico      # Favicon (update with your own)
-```
-
-## Features
-
-✅ Modern dark theme with gold accents
-✅ Fully responsive (mobile, tablet, desktop)
-✅ Smooth scroll animations
-✅ Intersection Observer for scroll effects
-✅ Hover effects on cards and buttons
-✅ SEO optimized with metadata
-✅ Fast loading performance
-✅ TypeScript for type safety
-
-## Customization Tips
+## Customization
 
 ### Colors
 
-Edit `tailwind.config.ts` to change the color scheme:
+Edit `tailwind.config.ts`:
 
 ```typescript
 colors: {
@@ -132,15 +147,11 @@ colors: {
 
 ### Typography
 
-The site uses Inter font from Google Fonts. To change it, update `app/globals.css`:
-
-```css
-@import url('https://fonts.googleapis.com/css2?family=YourFont:wght@400;500;600;700;800&display=swap');
-```
+Uses Inter font from Google Fonts. Change in `app/globals.css`.
 
 ### Add New Sections
 
-To add new sections, create a component in `components/` and import it in `app/page.tsx`.
+Create a component in `components/` and import it in `app/page.tsx`.
 
 ## Performance
 
