@@ -1,25 +1,18 @@
-# CodeDelivered.com Redesign - Project Plan
+# CodeDelivered.com - Project Specification
 
 ## Project Overview
 
-**Objective:** Replace the current codedelivered.com website with a modern, professional, dark-themed single-page landing site that showcases AI engineering and full-stack development expertise.
+**Objective:** Modern, professional, dark-themed single-page landing site showcasing US-led AI engineering and full-stack development with nearshore talent.
 
-**Timeline:** Single-session execution (~2.5-3 hours)
+**Status:** Production — live at codedelivered.com
 
-**Current Site Issues:**
-- Dated design (copyright 2023)
-- Generic stock imagery
-- Lacks focus on AI/modern tech capabilities
-- Orange accent feels Web 2.0
-
-**New Site Goals:**
-- Modern, clean aesthetic
-- Dark theme with gold accents
-- Showcase AI engineering expertise
-- Include project portfolio
-- Professional contact form
-- Mobile responsive
-- Fast loading performance
+**Site Goals:**
+- Modern, clean dark aesthetic with warm gold accents
+- Showcase AI engineering expertise and project portfolio
+- Interactive elements (EditorStack, GitHub heatmaps, DesktopOS menu bar)
+- Professional contact form with spam protection
+- Mobile responsive with separate background variants
+- Fast loading, SEO optimized, AI crawler friendly
 
 ---
 
@@ -32,7 +25,8 @@
 - **Deployment:** Vercel
 
 ### Third-Party Services
-- **Contact Form:** Formspree or Web3Forms (free tier, no backend needed)
+- **Contact Form:** Web3Forms (free tier, no backend needed)
+- **GitHub Heatmaps:** react-github-calendar
 
 ### Why This Stack?
 - **Next.js:** Industry standard, excellent performance, SEO-friendly, easy Vercel deployment
@@ -149,42 +143,45 @@ Small Text:       text-sm
 ### Hero Section
 **Headline:** "AI Engineering & Full-Stack Development, Delivered"
 
-**Subheadline:** "Building intelligent applications with cutting-edge AI, modern web technologies, and scalable cloud architecture"
+**Subheadline:** "US-led AI engineering and full-stack development with top nearshore talent. Flexible teams that scale with your project."
 
 **CTA:** "Get in Touch" (smooth scrolls to contact form)
 
 ### Services Section
 
 **1. AI Engineering**
-- Title: "AI Engineering"
-- Description: "Custom LLM applications, RAG systems, and intelligent automation that transform how businesses operate"
-- Tech: OpenAI, Anthropic, LangChain, Vector DBs, Python
+- Description: "Custom LLM applications, RAG systems, and intelligent automation — built by engineers who live and breathe AI, every day"
+- Tech: vLLM, OpenAI, Anthropic, LangChain, Vector DBs, Python
 
 **2. Full-Stack Development**
-- Title: "Full-Stack Development"
-- Description: "Modern, scalable web applications built with cutting-edge frameworks and best practices"
+- Description: "Modern, scalable web applications built by our US and nearshore engineers — scale the team up or down as your project demands"
 - Tech: React, Next.js, Node.js, TypeScript, PostgreSQL
 
 **3. Cloud & DevOps**
-- Title: "Cloud & DevOps"
-- Description: "Robust cloud infrastructure, CI/CD pipelines, and automated deployment workflows"
+- Description: "Robust cloud infrastructure, CI/CD pipelines, and automated deployment workflows — managed end-to-end so you ship faster"
 - Tech: AWS, GCP, Docker, Kubernetes, Terraform
 
 ### Projects Section
 
-**Example Projects (can be updated with real ones):**
-
-**Project 1: AI-Powered Analytics Dashboard**
+**Project 1: Vault AI Systems** (live: vault-ai-frontend.vercel.app)
 - Description: "Real-time analytics platform with LLM-powered insights and natural language queries"
-- Tech: Next.js, OpenAI, PostgreSQL, AWS
+- Tech: Ubuntu, Nvidia Container Toolkit, Harbor, Ansible, Docker, Prometheus, Grafana, Vector DB, vLLM, CUDA
 
 **Project 2: Enterprise RAG System**
 - Description: "Document intelligence system enabling semantic search across company knowledge base"
-- Tech: LangChain, Pinecone, FastAPI, React
+- Tech: LangGraph, vLLM, LiteLLM, LlamaIndex, Milvus, FastAPI, React, Celery, Redis, PostgreSQL, Neo4j, MinIO
 
-**Project 3: Automated CI/CD Platform**
-- Description: "Custom deployment pipeline with automated testing and multi-environment management"
-- Tech: GitHub Actions, Docker, AWS ECS, Terraform
+**Project 3: Boston Scientific - Compass** (live: compass.bsci.com)
+- Description: "Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration"
+- Tech: Nest.js, Nx, Angular 20, AWS
+
+**Project 4: NEXUS** (GitHub: jcarlin/NEXUS)
+- Description: "Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 50,000+ pages of mixed-format legal documents"
+- Tech: FastAPI, LangGraph, Claude AI, Qdrant, Neo4j, React, Celery, PostgreSQL, Docling
+
+**Project 5: Wine Shelf Scanner** (live + GitHub: jcarlin/wine-shelf-scanner)
+- Description: "AI-powered wine identification app that scans store shelves and overlays ratings from 191K+ wines instantly"
+- Tech: Next.js, SwiftUI, FastAPI, Google Cloud Vision, Claude AI, SQLite
 
 ### Contact Form
 - Sends to: info@codedelivered.com
@@ -203,29 +200,40 @@ Small Text:       text-sm
 ```
 codedelivered.com/
 ├── app/
-│   ├── layout.tsx           # Root layout with metadata
-│   ├── page.tsx             # Main landing page
-│   ├── globals.css          # Tailwind + custom styles
-│   └── favicon.ico
+│   ├── layout.tsx              # Root layout, metadata, JSON-LD structured data
+│   ├── page.tsx                # Main landing page orchestrator
+│   ├── globals.css             # Tailwind + custom styles & animations
+│   ├── robots.ts               # SEO robots configuration (AI crawlers allowed)
+│   └── sitemap.ts              # Sitemap generation
 ├── components/
-│   ├── Hero.tsx             # Hero section
-│   ├── Services.tsx         # Services section
-│   ├── ServiceCard.tsx      # Individual service card
-│   ├── Projects.tsx         # Projects section
-│   ├── ProjectCard.tsx      # Individual project card
-│   ├── Contact.tsx          # Contact section
-│   ├── ContactForm.tsx      # Contact form component
-│   └── Footer.tsx           # Footer component
+│   ├── Hero.tsx                # Hero section with CTA
+│   ├── Services.tsx            # Services grid container
+│   ├── ServiceCard.tsx         # Service card with Intersection Observer fade-in
+│   ├── Projects.tsx            # Featured projects grid
+│   ├── ProjectCard.tsx         # Project card with image modal & external links
+│   ├── Contact.tsx             # Contact section wrapper
+│   ├── ContactForm.tsx         # Web3Forms form with honeypot spam protection
+│   ├── EditorStack.tsx         # Terminal-style package display (Python/JS tabs)
+│   ├── GitHubHeatmap.tsx       # GitHub contributions section
+│   ├── GitHubCalendarCard.tsx  # Individual heatmap card with ResizeObserver
+│   ├── DesktopOS.tsx           # macOS menu bar (clock, date, temperature)
+│   ├── BackgroundImage.tsx     # Fixed background with mobile/desktop variants
+│   ├── ImageModal.tsx          # Full-screen image viewer with Escape key
+│   └── Footer.tsx              # Fixed footer with social links
 ├── lib/
-│   └── constants.ts         # Content, colors, config
+│   └── constants.ts            # All content: services, projects, packages, social links
 ├── public/
-│   └── favicon.ico
+│   └── projects/               # Project screenshots, backgrounds, social icons
+├── .eslintrc.json
 ├── .gitignore
 ├── next.config.js
 ├── package.json
+├── postcss.config.js
 ├── tailwind.config.ts
 ├── tsconfig.json
-├── CLAUDE.md               # This file
+├── ARCHITECTURE.md             # System architecture documentation
+├── ROADMAP.md                  # Maturity plan and future direction
+├── CLAUDE.md                   # This file
 └── README.md
 ```
 
@@ -234,45 +242,58 @@ codedelivered.com/
 ## Component Architecture
 
 ### Hero.tsx
-- Full viewport height (`h-screen`)
-- Centered content with max-width container
-- Dark gradient background (black to dark gray)
+- Full viewport height with centered content
+- Dark gradient background overlay
 - Headline, subheadline, CTA button
 - CTA scrolls smoothly to contact section
 
 ### ServiceCard.tsx
-**Props:**
-- title: string
-- description: string
-- techStack: string[]
-
-**Features:**
-- Dark card background (#1A1A1A)
-- Hover: Gold border glow + slight lift
+**Props:** title, description, techStack[]
+- Glass card with gold border glow on hover
+- Intersection Observer for scroll-triggered fade-in
 - Tech badges at bottom
-- Fade-in animation on scroll
 
 ### ProjectCard.tsx
-**Props:**
-- name: string
-- description: string
-- techStack: string[]
+**Props:** name, description, techStack[], image?, url?, github?
+- Project screenshot with click-to-enlarge (ImageModal)
+- Optional live demo link and GitHub link
+- Hover lift effect with tech badges
 
-**Features:**
-- Similar to ServiceCard but distinct layout
-- Hover effects
-- Tech badges
+### EditorStack.tsx
+- Terminal-style component with Python/JS package tabs
+- Auto-rotates between requirements.txt and package.json views
+- Displays tech stack with versions and descriptions
+- Data driven from PYTHON_PACKAGES and JAVASCRIPT_PACKAGES constants
+
+### GitHubHeatmap.tsx / GitHubCalendarCard.tsx
+- Live GitHub contribution heatmaps via react-github-calendar
+- Dual profiles (personal + work)
+- ResizeObserver for mobile auto-scroll to most recent activity
+- Clickable cards linking to GitHub profiles
+
+### DesktopOS.tsx
+- macOS-style menu bar fixed to top of page
+- Live clock and current date display
+- IP-based geolocation temperature (cached in localStorage)
+
+### BackgroundImage.tsx
+- Fixed-position background images
+- Separate mobile and desktop image variants
+- Handles viewport sizing without CSS background-image quirks
+
+### ImageModal.tsx
+- Full-screen image viewer for project screenshots
+- Escape key and click-outside to close
+- Scroll lock when modal is open
 
 ### ContactForm.tsx
-**Features:**
+- Web3Forms integration with honeypot spam protection
 - Form validation (email format, required fields)
-- Formspree integration
-- Loading state on submit
-- Success/error messages
+- Loading state, success/error messages
 - Gold submit button
 
 ### Footer.tsx
-- Social links (LinkedIn, GitHub)
+- Fixed sticky footer with social links (LinkedIn, GitHub)
 - Copyright notice
 - Dark background
 
@@ -402,26 +423,32 @@ export const metadata = {
 
 ## Post-Launch Checklist
 
-- [ ] Test on Chrome, Firefox, Safari
-- [ ] Test on iOS and Android devices
-- [ ] Verify contact form sends emails to info@codedelivered.com
-- [ ] Check all links work (LinkedIn, GitHub)
-- [ ] Verify smooth scrolling on all browsers
-- [ ] Test keyboard navigation
-- [ ] Run Lighthouse audit
-- [ ] Check mobile responsiveness on various screen sizes
-- [ ] Verify domain is correctly configured
-- [ ] Test loading speed on slow 3G connection
-- [ ] Proofread all content for typos
+- [x] Test on Chrome, Firefox, Safari
+- [x] Test on iOS and Android devices
+- [x] Verify contact form sends emails to info@codedelivered.com
+- [x] Check all links work (LinkedIn, GitHub)
+- [x] Verify smooth scrolling on all browsers
+- [x] Test keyboard navigation
+- [x] Run Lighthouse audit
+- [x] Check mobile responsiveness on various screen sizes
+- [x] Verify domain is correctly configured
+- [x] Test loading speed on slow 3G connection
+- [x] Proofread all content for typos
 
 ---
 
-## Future Enhancements (Post-Launch)
+## Future Enhancements
+
+**Completed since v1.0:**
+- ~~More detailed project case studies~~ → Live project cards with screenshots, demo links, and GitHub links
+- Interactive tech stack visualization (EditorStack)
+- Live GitHub contribution heatmaps
+- DesktopOS menu bar with weather integration
+- Team/nearshore positioning rebrand
 
 **Priority 2 (Optional):**
 - Add blog/articles section for thought leadership
 - Client testimonials (when available)
-- More detailed project case studies
 - Dark/light mode toggle (currently dark only)
 
 **Priority 3 (Nice to Have):**
@@ -489,6 +516,6 @@ export const metadata = {
 
 ---
 
-**Last Updated:** October 14, 2025
-**Version:** 1.0
-**Status:** Ready for implementation
+**Last Updated:** March 15, 2026
+**Version:** 2.0
+**Status:** Production — live at codedelivered.com
