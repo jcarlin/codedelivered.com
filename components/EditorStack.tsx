@@ -93,7 +93,7 @@ export default function EditorStack() {
             </div>
 
             {/* Terminal Content */}
-            <div className="relative p-6 font-mono text-sm md:text-base overflow-x-auto min-h-[400px]">
+            <div className="relative p-6 font-mono text-sm md:text-base overflow-x-auto overflow-y-hidden h-[560px] md:h-[620px]">
               {/* Scanline effect */}
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-green-500/5 to-transparent animate-pulse"></div>
 
