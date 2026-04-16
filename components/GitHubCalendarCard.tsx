@@ -3,6 +3,8 @@
 import { useRef, useEffect } from 'react'
 import { GitHubCalendar } from 'react-github-calendar'
 
+const START_DATE = '2025-12-01'
+
 interface GitHubCalendarCardProps {
   username: string
   label: string
@@ -64,6 +66,8 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
             blockSize={14}
             blockMargin={4}
             fontSize={14}
+            transformData={(activities) => activities.filter((a) => a.date >= START_DATE)}
+            labels={{ totalCount: '{{count}} contributions since Dec 2025' }}
           />
         </div>
       </a>
