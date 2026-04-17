@@ -11,7 +11,7 @@ export default function GitHubHeatmap() {
           Live contribution activity — updated automatically from GitHub
         </p>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 lg:gap-8">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-8">
           <GitHubCalendarCard
             username="jcarlin"
             label="Personal"
