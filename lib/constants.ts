@@ -35,7 +35,7 @@ export const PROJECTS = [
   },
   {
     name: 'Deagle Labs',
-    description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 50,000+ pages of mixed-format legal documents',
+    description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 1.4+ million pages of mixed-format legal documents',
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
     image: '/projects/deagle-ai.png',
     url: 'https://nexus-alpha-swart.vercel.app/',
