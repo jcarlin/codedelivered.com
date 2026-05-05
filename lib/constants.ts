@@ -32,11 +32,11 @@ export const PROJECTS = [
     url: 'https://compass.bsci.com',
   },
   {
-    name: 'NEXUS',
+    name: 'Deagle Labs',
     description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 50,000+ pages of mixed-format legal documents',
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
-    image: '/projects/NEXUS.png',
-    url: 'https://nexus-alpha-swart.vercel.app/',
+    image: '/projects/deagle-ai.png',
+    url: 'https://www.deaglelabs.com/',
     github: 'https://github.com/jcarlin/NEXUS',
   },
   {
