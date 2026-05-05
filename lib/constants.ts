@@ -23,6 +23,7 @@ export const PROJECTS = [
     techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
     image: '/projects/vault-ai-1.png',
     url: 'https://vault-ai-frontend.vercel.app/',
+    website: 'https://vaultaisystems.com',
   },
   {
     name: 'Boston Scientific - Compass',
@@ -30,13 +31,15 @@ export const PROJECTS = [
     techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
     image: '/projects/bsci-compass.png',
     url: 'https://compass.bsci.com',
+    website: 'https://www.bostonscientific.com',
   },
   {
     name: 'Deagle Labs',
     description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 50,000+ pages of mixed-format legal documents',
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
     image: '/projects/deagle-ai.png',
-    url: 'https://www.deaglelabs.com/',
+    url: 'https://nexus-alpha-swart.vercel.app/',
+    website: 'https://www.deaglelabs.com/',
     github: 'https://github.com/jcarlin/NEXUS',
   },
   {

@@ -10,11 +10,12 @@ interface ProjectCardProps {
   techStack: string[]
   image?: string
   url?: string
+  website?: string
   github?: string
   delay?: number
 }
 
-export default function ProjectCard({ name, description, techStack, image, url, github, delay = 0 }: ProjectCardProps) {
+export default function ProjectCard({ name, description, techStack, image, url, website, github, delay = 0 }: ProjectCardProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
@@ -86,7 +87,7 @@ export default function ProjectCard({ name, description, techStack, image, url, 
           </div>
 
           {/* Project Links */}
-          {(url || github) && (
+          {(url || website || github) && (
             <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
               {url && (
                 <a
@@ -99,6 +100,20 @@ export default function ProjectCard({ name, description, techStack, image, url, 
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                   <span>Live App</span>
+                </a>
+              )}
+              {website && (
+                <a
+                  href={website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs text-gold/70 hover:text-gold transition-colors duration-200"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.6 9h16.8M3.6 15h16.8M12 3a14.5 14.5 0 010 18M12 3a14.5 14.5 0 000 18" />
+                  </svg>
+                  <span>Website</span>
                 </a>
               )}
               {github && (
