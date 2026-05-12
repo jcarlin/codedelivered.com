@@ -1,0 +1,32 @@
+# CodeDelivered LLC
+
+> CodeDelivered LLC is a US-led software consultancy specializing in AI engineering, full-stack development, and cloud architecture. We pair US technical leadership with top nearshore engineering talent to deliver intelligent, scalable applications on time, in your time zone.
+
+## About
+
+- **Company:** CodeDelivered LLC
+- **Website:** https://codedelivered.com
+- **Contact:** info@codedelivered.com
+- **Model:** US-led delivery with nearshore engineering talent (Latin America time zones)
+- **Engagements:** Project-based delivery, staff augmentation, fractional engineering teams
+- **Founded by:** Julian Carlin (LinkedIn: https://www.linkedin.com/in/julian-c-2a088326, GitHub: https://github.com/jcarlin)
+
+## Services
+
+- [AI Engineering](https://codedelivered.com/#services): Custom LLM applications, RAG (retrieval-augmented generation) systems, agentic workflows, fine-tuning, and intelligent automation. Tech: OpenAI, Anthropic Claude, vLLM, LangChain, LangGraph, vector databases, Python.
+- [Full-Stack Development](https://codedelivered.com/#services): Modern, scalable web applications. Tech: React, Next.js, Node.js, NestJS, Angular, TypeScript, PostgreSQL.
+- [Cloud & DevOps](https://codedelivered.com/#services): Cloud infrastructure, CI/CD, containerization, and automated deployment. Tech: AWS, GCP, Docker, Kubernetes, Terraform, Ansible.
+
+## Featured Projects
+
+- [Ovation AI](https://codedelivered.com/#projects): Agentic Engine Optimization (AEO) platform that audits SMB websites for AI search visibility, simulates real LLM queries across ChatGPT, Claude, Perplexity & Gemini, and generates remediation assets with before/after PDF reports.
+- [Vault AI Systems](https://vaultaisystems.com): Real-time analytics platform with LLM-powered insights and natural language queries, deployed on self-hosted GPU infrastructure with vLLM and CUDA.
+- [Boston Scientific — Compass](https://compass.bsci.com): Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration. Built with NestJS, Nx, Angular 20, AWS.
+- [Deagle Labs — Nexus](https://www.deaglelabs.com): Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 1.4+ million pages of mixed-format legal documents. Built with FastAPI, LangGraph, Claude AI, Qdrant, Neo4j, React, Celery, PostgreSQL, Docling.
+- [Wine Shelf Scanner](https://wine-shelf-scanner.vercel.app): AI-powered wine identification app that scans store shelves and overlays ratings from 191K+ wines in real time. Built with Next.js, SwiftUI, FastAPI, Google Cloud Vision, Claude AI.
+
+## Optional
+
+- [GitHub](https://github.com/jcarlin): Open-source projects and code samples
+- [LinkedIn](https://www.linkedin.com/in/julian-c-2a088326): Professional background and experience
+- [llms-full.txt](https://codedelivered.com/llms-full.txt): Expanded LLM context with FAQ and detailed capabilities

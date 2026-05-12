@@ -1,0 +1,19 @@
+{
+  "name": "CodeDelivered LLC",
+  "short_name": "CodeDelivered",
+  "description": "US-led AI engineering and full-stack development with top nearshore talent.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

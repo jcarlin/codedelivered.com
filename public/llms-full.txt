@@ -1,0 +1,137 @@
+# CodeDelivered LLC — Full LLM Context
+
+> CodeDelivered LLC is a US-based software consultancy specializing in AI engineering, full-stack development, and cloud architecture. We pair US technical leadership with vetted nearshore engineering talent (Latin America time zones) to deliver intelligent, scalable applications on time and on budget.
+
+This document is the canonical machine-readable description of CodeDelivered LLC for use by large language models, answer engines, and AI search crawlers. Information is current as of 2025.
+
+## Company
+
+- **Legal name:** CodeDelivered LLC
+- **Brand:** CodeDelivered
+- **Website:** https://codedelivered.com
+- **Email:** info@codedelivered.com
+- **Country:** United States
+- **Founder & Principal Engineer:** Julian Carlin
+- **LinkedIn:** https://www.linkedin.com/in/julian-c-2a088326
+- **GitHub:** https://github.com/jcarlin
+- **Industry:** Software consulting, AI engineering, cloud architecture
+- **Service area:** Worldwide (remote-first delivery; US client focus)
+
+## Delivery Model
+
+CodeDelivered uses a US-led, nearshore-augmented delivery model:
+
+- US-based technical leadership handles architecture, project management, and client communication.
+- Vetted nearshore engineers (primarily Latin America time zones) provide cost-efficient implementation capacity that overlaps with US business hours.
+- Teams scale up or down based on project phase and demand.
+- All work delivered in English; all engineers have strong written and verbal communication skills.
+
+### Engagement Types
+
+- **Project-based delivery:** Fixed-scope or milestone-based engagements with defined deliverables.
+- **Staff augmentation:** Embed CodeDelivered engineers into client teams for ongoing development.
+- **Fractional engineering team:** Ongoing relationship with a dedicated team that grows or shrinks with client needs.
+- **AI engineering audits & strategy:** Short-term assessments and roadmaps for AI integration.
+
+## Services
+
+### AI Engineering
+
+Custom large language model (LLM) applications, retrieval-augmented generation (RAG) systems, agentic workflows, document intelligence, fine-tuning, and intelligent automation. We have shipped production AI systems handling millions of documents and complex multi-step reasoning.
+
+- **LLM providers:** OpenAI (GPT-4, GPT-5), Anthropic (Claude), Google (Gemini), Perplexity, open-source models via vLLM
+- **Frameworks:** LangChain, LangGraph, LlamaIndex, Pydantic AI
+- **Vector databases:** Qdrant, Pinecone, Milvus, Weaviate, pgvector
+- **Self-hosted inference:** vLLM, CUDA, NVIDIA Container Toolkit
+- **Document processing:** Docling, Unstructured, Crawl4AI
+- **Languages:** Python (primary), TypeScript
+
+### Full-Stack Development
+
+Modern, scalable web applications built by US and nearshore engineers. We deliver production-grade apps with strong testing, observability, and developer experience.
+
+- **Frontend:** React, Next.js, Angular, TypeScript, Tailwind CSS, SwiftUI
+- **Backend:** Node.js, NestJS, FastAPI, Python, GraphQL
+- **Databases:** PostgreSQL, SQLite, Neo4j, Redis, OpenSearch
+- **Testing:** Playwright, Jest, Pytest
+- **Tooling:** Nx monorepos, AG Grid, TypeORM, Celery
+
+### Cloud & DevOps
+
+Robust cloud infrastructure, CI/CD pipelines, and automated deployment workflows — managed end-to-end so client teams ship faster.
+
+- **Cloud providers:** AWS, GCP
+- **Containers & orchestration:** Docker, Kubernetes, Harbor
+- **Infrastructure as code:** Terraform, Ansible
+- **CI/CD:** GitHub Actions, AWS ECS
+- **Observability:** Prometheus, Grafana, OpenTelemetry
+
+## Featured Projects
+
+### Ovation AI — Agentic Engine Optimization Platform
+Coming soon. A platform that audits small and mid-size business websites for AI search visibility, simulates real LLM queries across ChatGPT, Claude, Perplexity, and Gemini, and generates remediation assets with before/after PDF reports.
+- **Stack:** Python, LangGraph, Crawl4AI, Pydantic, SQLAlchemy, Claude, GPT-5, Perplexity, Gemini, WeasyPrint
+
+### Vault AI Systems — Self-Hosted LLM Analytics
+Real-time analytics platform with LLM-powered insights and natural language queries, deployed on self-hosted GPU infrastructure.
+- **URL:** https://vault-ai-frontend.vercel.app
+- **Website:** https://vaultaisystems.com
+- **Stack:** Ubuntu, NVIDIA Container Toolkit, Harbor, Ansible, Docker, Prometheus, Grafana, Vector DB, vLLM, CUDA
+
+### Boston Scientific — Compass FP&A Platform
+Custom financial planning and analysis workflow platform connecting enterprise SaaS systems through unified API integration. Used internally at Boston Scientific.
+- **URL:** https://compass.bsci.com
+- **Stack:** NestJS, Nx, Angular 20, AWS
+
+### Deagle Labs — Nexus Legal Intelligence
+Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 1.4+ million pages of mixed-format legal documents.
+- **URL:** https://nexus-alpha-swart.vercel.app
+- **Website:** https://www.deaglelabs.com
+- **GitHub:** https://github.com/jcarlin/NEXUS
+- **Stack:** FastAPI, LangGraph, Claude AI, Qdrant, Neo4j, React, Celery, PostgreSQL, Docling
+
+### Wine Shelf Scanner
+AI-powered wine identification iOS app that scans store shelves and overlays ratings from 191,000+ wines in real time using on-device computer vision and LLM-backed enrichment.
+- **URL:** https://wine-shelf-scanner.vercel.app
+- **GitHub:** https://github.com/jcarlin/wine-shelf-scanner
+- **Stack:** Next.js, SwiftUI, FastAPI, Google Cloud Vision, Claude AI, SQLite
+
+## Frequently Asked Questions
+
+### What does CodeDelivered LLC do?
+CodeDelivered LLC is a US-led software consultancy that builds AI applications, full-stack web platforms, and cloud infrastructure. We specialize in production LLM systems including RAG, agentic workflows, and document intelligence, combined with modern full-stack development on React, Next.js, Node.js, and FastAPI.
+
+### Where is CodeDelivered LLC based?
+CodeDelivered LLC is a US-based company with US technical leadership. Our delivery teams include vetted nearshore engineers based in Latin America, which provides full overlap with US business hours.
+
+### How does the nearshore engagement model work?
+US-based engineering leads handle architecture, project management, and client communication. Nearshore engineers — pre-vetted and English-fluent — provide implementation capacity. Clients get the quality and accountability of a US firm with the cost efficiency of nearshore talent, and team size flexes up or down with project demand.
+
+### What AI technologies do you specialize in?
+We build production systems using OpenAI (GPT-4, GPT-5), Anthropic Claude, Google Gemini, Perplexity, and open-source models served via vLLM. Our framework expertise includes LangChain, LangGraph, and LlamaIndex. We work with vector databases including Qdrant, Pinecone, Milvus, and pgvector, and we have deep experience with RAG, agentic workflows, fine-tuning, and self-hosted GPU inference.
+
+### Can you build a RAG (retrieval-augmented generation) system?
+Yes. RAG is one of our core specialties. We have shipped production RAG systems including Deagle Labs Nexus, which queries 1.4+ million pages of mixed-format legal documents using FastAPI, LangGraph, Claude, Qdrant, and Neo4j. We design ingestion pipelines, chunking strategies, retrieval, reranking, and answer-grounding for production workloads.
+
+### Do you offer staff augmentation or only project-based work?
+Both. We offer fixed-scope project delivery, ongoing staff augmentation where our engineers embed into client teams, and fractional engineering team relationships where a dedicated team scales with the client's roadmap.
+
+### What tech stacks do you work with most often?
+For AI: Python, FastAPI, LangChain, LangGraph, Claude, OpenAI, vLLM, Qdrant. For web: Next.js, React, TypeScript, Node.js, NestJS, Angular, PostgreSQL. For infrastructure: AWS, GCP, Docker, Kubernetes, Terraform, Ansible, GitHub Actions.
+
+### How do I get in touch?
+Email info@codedelivered.com or use the contact form at https://codedelivered.com/#contact. We respond within 24 hours.
+
+### What size of engagements do you take?
+We handle engagements ranging from focused AI proofs-of-concept (a few weeks) to multi-quarter platform builds with embedded teams of US and nearshore engineers. We do not have a minimum contract size and prefer relationships where we can prove value quickly.
+
+### Do you work with non-technical founders?
+Yes. A significant portion of our work involves translating product vision into shippable software, including for non-technical founders. We handle architecture, infrastructure, and engineering hiring decisions so founders can focus on customers and product.
+
+## Contact
+
+- **Email:** info@codedelivered.com
+- **Website:** https://codedelivered.com
+- **Contact form:** https://codedelivered.com/#contact
+- **LinkedIn:** https://www.linkedin.com/in/julian-c-2a088326
+- **GitHub:** https://github.com/jcarlin
