@@ -12,10 +12,11 @@ interface ProjectCardProps {
   url?: string
   website?: string
   github?: string
+  comingSoon?: boolean
   delay?: number
 }
 
-export default function ProjectCard({ name, description, techStack, image, url, website, github, delay = 0 }: ProjectCardProps) {
+export default function ProjectCard({ name, description, techStack, image, url, website, github, comingSoon = false, delay = 0 }: ProjectCardProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
@@ -46,8 +47,21 @@ export default function ProjectCard({ name, description, techStack, image, url, 
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
+        {/* Coming Soon Placeholder */}
+        {comingSoon && (
+          <div className="relative w-full aspect-video overflow-hidden bg-gradient-to-br from-bg-card via-[#1a1a1a] to-gold/10">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute w-48 h-48 rounded-full bg-gold/5 blur-3xl" />
+              <div className="relative flex items-center gap-2 bg-gold/10 border border-gold/40 backdrop-blur-sm text-gold text-sm font-medium px-4 py-1.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                <span>Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Image Section */}
-        {image && (
+        {!comingSoon && image && (
           <div
             onClick={() => setIsModalOpen(true)}
             className="relative w-full aspect-video overflow-hidden cursor-pointer group"
@@ -87,7 +101,7 @@ export default function ProjectCard({ name, description, techStack, image, url, 
           </div>
 
           {/* Project Links */}
-          {(url || website || github) && (
+          {!comingSoon && (url || website || github) && (
             <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
               {url && (
                 <a
@@ -135,7 +149,7 @@ export default function ProjectCard({ name, description, techStack, image, url, 
       </div>
 
       {/* Image Modal */}
-      {image && (
+      {!comingSoon && image && (
         <ImageModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}

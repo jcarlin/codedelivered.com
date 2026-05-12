@@ -18,6 +18,12 @@ export const SERVICES = [
 
 export const PROJECTS = [
   {
+    name: 'Ovation AI — AEO Platform',
+    description: 'Agentic Engine Optimization platform that audits SMB websites for AI search visibility, simulates real LLM queries across ChatGPT, Claude, Perplexity & Gemini, and generates remediation assets with before/after PDF reports.',
+    techStack: ['Python', 'LangGraph', 'Crawl4AI', 'Pydantic', 'SQLAlchemy', 'Claude', 'GPT-5', 'Perplexity', 'Gemini', 'WeasyPrint'],
+    comingSoon: true,
+  },
+  {
     name: 'Vault AI Systems',
     description: 'Real-time analytics platform with LLM-powered insights and natural language queries',
     techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
