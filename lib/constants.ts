@@ -32,14 +32,6 @@ export const PROJECTS = [
     website: 'https://vaultaisystems.com',
   },
   {
-    name: 'Boston Scientific - Compass',
-    description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration',
-    techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
-    image: '/projects/bsci-compass.png',
-    url: 'https://compass.bsci.com',
-    website: 'https://www.bostonscientific.com',
-  },
-  {
     name: 'Deagle Labs',
     description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 1.4+ million pages of mixed-format legal documents',
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
@@ -55,6 +47,14 @@ export const PROJECTS = [
     image: '/projects/wine-scanner-app.png',
     url: 'https://wine-shelf-scanner.vercel.app/',
     github: 'https://github.com/jcarlin/wine-shelf-scanner',
+  },
+  {
+    name: 'Boston Scientific - Compass',
+    description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration',
+    techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
+    image: '/projects/bsci-compass.png',
+    url: 'https://compass.bsci.com',
+    website: 'https://www.bostonscientific.com',
   },
 ]
 
