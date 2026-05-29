@@ -2,24 +2,27 @@ import GitHubCalendarCard from './GitHubCalendarCard'
 
 export default function GitHubHeatmap() {
   return (
-    <section id="github" className="py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          <span className="text-gold">GitHub</span> Contributions
-        </h2>
-        <p className="text-black text-center mb-12 max-w-2xl mx-auto font-medium">
-          Live contribution activity — updated automatically from GitHub
-        </p>
+    <section id="github" className="reveal cd-section">
+      <div className="wrap">
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '70ch' }}>
+          <span className="eyebrow">Always shipping</span>
+          <h2 className="sec-h">
+            Live from our <span className="g">GitHub</span>
+          </h2>
+          <p className="sec-sub" style={{ marginInline: 'auto' }}>
+            Contribution activity across personal and client work — pulled straight from GitHub.
+          </p>
+        </div>
 
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-8">
+        <div className="gh-grid">
           <GitHubCalendarCard
             username="jcarlin"
-            label="Personal"
+            label="Personal — @jcarlin"
             profileUrl="https://github.com/jcarlin"
           />
           <GitHubCalendarCard
             username="jcarlin-OF"
-            label="Work"
+            label="Work — @jcarlin-OF"
             profileUrl="https://github.com/jcarlin-OF"
           />
         </div>

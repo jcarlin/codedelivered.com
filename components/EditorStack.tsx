@@ -10,7 +10,6 @@ export default function EditorStack() {
   const [isPaused, setIsPaused] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  // Rotate between views every 7 seconds
   useEffect(() => {
     if (isPaused) return
 
@@ -19,122 +18,135 @@ export default function EditorStack() {
       setTimeout(() => {
         setCurrentView((prev) => (prev === 'python' ? 'javascript' : 'python'))
         setIsVisible(true)
-      }, 300) // Wait for fade out before switching
+      }, 280)
     }, 7000)
 
     return () => clearInterval(interval)
   }, [isPaused])
 
-  // Initial fade in
   useEffect(() => {
     setIsVisible(true)
   }, [])
 
   const handleTabClick = (view: StackView) => {
     if (view === currentView) return
-
-    setIsPaused(true) // Stop auto-rotation when user manually clicks
+    setIsPaused(true)
     setIsVisible(false)
     setTimeout(() => {
       setCurrentView(view)
       setIsVisible(true)
-    }, 300)
+    }, 280)
   }
 
-  const filename = currentView === 'python' ? 'requirements.txt' : 'package.json'
   const packages = currentView === 'python' ? PYTHON_PACKAGES : JAVASCRIPT_PACKAGES
 
   return (
-    <section id="stack" className="py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          What&apos;s in our <span className="text-gold">editor</span> right now
-        </h2>
-        <p className="text-black text-center mb-12 max-w-2xl mx-auto font-medium">
-          The tools and frameworks our team works with every day
-        </p>
+    <section id="editor" className="reveal cd-section">
+      <div className="wrap">
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '70ch' }}>
+          <span className="eyebrow">Inside the workshop</span>
+          <h2 className="sec-h">
+            What&rsquo;s in our <span className="g">editor</span> right now
+          </h2>
+          <p className="sec-sub" style={{ marginInline: 'auto' }}>
+            The real stack our engineers reach for every day — frontier-model tooling, type-safe web, and the infra that keeps it all running.
+          </p>
+        </div>
 
         <div
-          className="max-w-4xl mx-auto"
+          className="editor-card"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Terminal Window */}
-          <div className="bg-black rounded-lg shadow-2xl border border-green-500/20 overflow-hidden">
-            {/* Terminal Header */}
-            <div className="bg-[#1a1a1a] border-b border-green-500/20 px-4 py-2 flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-              </div>
-              <div className="ml-4 flex gap-2">
-                <div
-                  onClick={() => handleTabClick('python')}
-                  className={`px-3 py-1 text-xs font-mono transition-colors cursor-pointer hover:text-green-300 ${
-                    currentView === 'python'
-                      ? 'bg-black text-green-400 border-b border-green-400'
-                      : 'text-green-400/50'
-                  }`}
-                >
-                  requirements.txt
-                </div>
-                <div
-                  onClick={() => handleTabClick('javascript')}
-                  className={`px-3 py-1 text-xs font-mono transition-colors cursor-pointer hover:text-green-300 ${
-                    currentView === 'javascript'
-                      ? 'bg-black text-green-400 border-b border-green-400'
-                      : 'text-green-400/50'
-                  }`}
-                >
-                  package.json
-                </div>
-              </div>
+          <div className="editor-bar">
+            <div className="dots">
+              <i></i>
+              <i></i>
+              <i></i>
             </div>
-
-            {/* Terminal Content */}
-            <div className="relative p-6 font-mono text-sm md:text-base overflow-x-auto overflow-y-hidden h-[560px] md:h-[620px]">
-              {/* Scanline effect */}
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-green-500/5 to-transparent animate-pulse"></div>
-
-              {/* Content */}
-              <div
-                className={`transition-opacity duration-300 ${
-                  isVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+            <div className="etabs">
+              <button
+                type="button"
+                className={'etab' + (currentView === 'python' ? ' on' : '')}
+                onClick={() => handleTabClick('python')}
               >
-                {currentView === 'python' ? (
-                  <div className="space-y-1">
-                    <div className="text-green-400/60 mb-3"># requirements.txt</div>
-                    {packages.map((pkg, index) => (
-                      <div key={index} className="text-green-400 hover:text-green-300 transition-colors">
-                        <span className="text-green-300">{pkg.name}</span>
-                        <span className="text-green-400/80">{pkg.version}</span>
-                        <span className="text-green-400/50 ml-4"># {pkg.description}</span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="space-y-1">
-                    <div className="text-green-400/60 mb-1">{'{'}</div>
-                    <div className="text-green-400/60 ml-4">&quot;dependencies&quot;: {'{'}</div>
-                    {packages.map((pkg, index) => (
-                      <div key={index} className="text-green-400 hover:text-green-300 transition-colors ml-8">
-                        <span className="text-green-300">&quot;{pkg.name}&quot;</span>
-                        <span className="text-green-400/80">: &quot;{pkg.version}&quot;</span>
-                        {index < packages.length - 1 && ','}
-                        <span className="text-green-400/50 ml-4">{'// '}{pkg.description}</span>
-                      </div>
-                    ))}
-                    <div className="text-green-400/60 ml-4">{'}'}</div>
-                    <div className="text-green-400/60">{'}'}</div>
-                  </div>
-                )}
-
-                {/* Blinking cursor */}
-                <div className="inline-block w-2 h-5 bg-green-400 animate-pulse ml-1"></div>
-              </div>
+                requirements.txt
+              </button>
+              <button
+                type="button"
+                className={'etab' + (currentView === 'javascript' ? ' on' : '')}
+                onClick={() => handleTabClick('javascript')}
+              >
+                package.json
+              </button>
             </div>
+          </div>
+
+          <div
+            className="ecode"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transition: 'opacity 0.28s ease',
+            }}
+          >
+            {currentView === 'python' ? (
+              <>
+                <div className="ln">
+                  <span className="gut"></span>
+                  <span className="c"># requirements.txt</span>
+                </div>
+                <div className="ln">
+                  <span className="gut"></span>
+                  <span> </span>
+                </div>
+                {packages.map((pkg, i) => (
+                  <div className="ln" key={i}>
+                    <span className="gut">{i + 1}</span>
+                    <span>
+                      <span className="k">{pkg.name}</span>
+                      <span className="v">{pkg.version}</span>
+                      {'  '}
+                      <span className="c"># {pkg.description}</span>
+                    </span>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <>
+                <div className="ln">
+                  <span className="gut"></span>
+                  <span className="p">{'{'}</span>
+                </div>
+                <div className="ln">
+                  <span className="gut"></span>
+                  <span>
+                    {'  '}
+                    <span className="k">&quot;dependencies&quot;</span>: {'{'}
+                  </span>
+                </div>
+                {packages.map((pkg, i) => (
+                  <div className="ln" key={i}>
+                    <span className="gut">{i + 1}</span>
+                    <span>
+                      {'    '}
+                      <span className="k">&quot;{pkg.name}&quot;</span>:{' '}
+                      <span className="v">&quot;{pkg.version}&quot;</span>
+                      {i < packages.length - 1 ? ',' : ''}
+                      {'  '}
+                      <span className="c">{`// ${pkg.description}`}</span>
+                    </span>
+                  </div>
+                ))}
+                <div className="ln">
+                  <span className="gut"></span>
+                  <span>{'  }'}</span>
+                </div>
+                <div className="ln">
+                  <span className="gut"></span>
+                  <span className="p">{'}'}</span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

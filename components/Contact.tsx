@@ -1,19 +1,75 @@
 import ContactForm from './ContactForm'
+import { SOCIAL_LINKS } from '@/lib/constants'
+
+function MailIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </svg>
+  )
+}
+
+function ClockIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+  )
+}
+
+function PinIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.4" />
+    </svg>
+  )
+}
 
 export default function Contact() {
   return (
-    <section id="contact" className="pt-20 pb-14 md:pt-40 md:pb-22 bg-background min-h-screen">
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Let&apos;s <span className="text-gold">Build Together</span>
+    <section id="contact" className="cd-section wrap">
+      <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '70ch' }}>
+        <span className="eyebrow">Let&rsquo;s build together</span>
+        <h2 className="sec-h">
+          Have something <span className="g">worth shipping?</span>
         </h2>
-        <p className="text-text-secondary text-center mb-12">
-          Have a project in mind? Get in touch and let&apos;s discuss how our team can help bring it to life.
+        <p className="sec-sub" style={{ marginInline: 'auto' }}>
+          Tell us what you&rsquo;re building. We&rsquo;ll come back within one business day with a plan, a team, and a timeline.
         </p>
-
-        <div className="glass-card p-8 md:p-10">
-          <ContactForm />
-        </div>
+      </div>
+      <div className="contact-card">
+        <ContactForm />
+        <aside className="contact-aside">
+          <h3>Start a conversation</h3>
+          <p>US-led, nearshore-powered. Senior engineers in your time zone, governance baked in from day one.</p>
+          <div className="contact-list">
+            <a
+              className="ci"
+              href={`mailto:${SOCIAL_LINKS.email}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <span className="ico">
+                <MailIcon />
+              </span>
+              {SOCIAL_LINKS.email}
+            </a>
+            <div className="ci">
+              <span className="ico">
+                <ClockIcon />
+              </span>
+              Replies within one business day
+            </div>
+            <div className="ci">
+              <span className="ico">
+                <PinIcon />
+              </span>
+              United States · Latin America
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   )

@@ -1,17 +1,36 @@
+export const METRICS = [
+  { n: '5', l: 'production platforms shipped' },
+  { n: '1.4M+', l: 'pages indexed & queried' },
+  { n: '4', l: 'frontier models orchestrated' },
+  { n: '100%', l: 'in your time zone' },
+]
+
 export const SERVICES = [
   {
+    n: '01',
     title: 'AI Engineering',
-    description: 'Custom LLM applications, RAG systems, and intelligent automation — built by engineers who live and breathe AI, every day',
+    tagline: 'LLM apps, RAG & agents',
+    description:
+      'Custom LLM applications, retrieval pipelines, and agentic automation — architected, evaluated, and shipped by engineers who build with frontier models every day.',
+    points: ['RAG & vector search', 'Agent orchestration', 'Evals & guardrails'],
     techStack: ['vLLM', 'OpenAI', 'Anthropic', 'LangChain', 'Vector DBs', 'Python'],
   },
   {
+    n: '02',
     title: 'Full-Stack Development',
-    description: 'Modern, scalable web applications built by our US and nearshore engineers — scale the team up or down as your project demands',
+    tagline: 'Web apps that scale',
+    description:
+      'Modern, type-safe web applications built by senior US and nearshore engineers — spin the team up or down as your roadmap demands, without the agency overhead.',
+    points: ['Type-safe end to end', 'Design-led front ends', 'Flexible team scaling'],
     techStack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL'],
   },
   {
+    n: '03',
     title: 'Cloud & DevOps',
-    description: 'Robust cloud infrastructure, CI/CD pipelines, and automated deployment workflows — managed end-to-end so you ship faster',
+    tagline: 'Ship faster, sleep better',
+    description:
+      'Resilient cloud infrastructure, CI/CD, and automated deployment workflows — managed end to end so releases are boring and your team ships on Fridays.',
+    points: ['Infra as code', 'CI/CD pipelines', 'Observability built in'],
     techStack: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform'],
   },
 ]
@@ -19,13 +38,17 @@ export const SERVICES = [
 export const PROJECTS = [
   {
     name: 'Ovation AI — AEO Platform',
-    description: 'Agentic Engine Optimization platform that audits SMB websites for AI search visibility, simulates real LLM queries across ChatGPT, Claude, Perplexity & Gemini, and generates remediation assets with before/after PDF reports.',
+    tag: 'AI Platform',
+    description:
+      'Agentic Engine Optimization platform that audits SMB websites for AI-search visibility, simulates real LLM queries across ChatGPT, Claude, Perplexity & Gemini, and generates remediation assets with before/after PDF reports.',
     techStack: ['Python', 'LangGraph', 'Crawl4AI', 'Pydantic', 'SQLAlchemy', 'Claude', 'GPT-5', 'Perplexity', 'Gemini', 'WeasyPrint'],
     comingSoon: true,
   },
   {
     name: 'Vault AI Systems',
-    description: 'Real-time analytics platform with LLM-powered insights and natural language queries',
+    tag: 'Analytics',
+    description:
+      'Real-time analytics platform with LLM-powered insights and natural-language queries over live operational data.',
     techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
     image: '/projects/vault-ai-1.png',
     url: 'https://vault-ai-frontend.vercel.app/',
@@ -33,7 +56,9 @@ export const PROJECTS = [
   },
   {
     name: 'Deagle Labs',
-    description: 'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 1.4+ million pages of mixed-format legal documents',
+    tag: 'Legal RAG',
+    description:
+      'Multimodal RAG investigation platform for legal document intelligence — ingests, analyzes, and queries 1.4M+ pages of mixed-format legal documents.',
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
     image: '/projects/deagle-labs.png',
     url: 'https://nexus-alpha-swart.vercel.app/',
@@ -42,19 +67,68 @@ export const PROJECTS = [
   },
   {
     name: 'Wine Shelf Scanner',
-    description: 'AI-powered wine identification app that scans store shelves and overlays ratings from 191K+ wines instantly',
+    tag: 'Mobile + CV',
+    description:
+      'AI-powered wine identification app that scans store shelves and overlays ratings from 191K+ wines instantly.',
     techStack: ['Next.js', 'SwiftUI', 'FastAPI', 'Google Cloud Vision', 'Claude AI', 'SQLite'],
     image: '/projects/wine-scanner-app.png',
     url: 'https://wine-shelf-scanner.vercel.app/',
     github: 'https://github.com/jcarlin/wine-shelf-scanner',
   },
   {
-    name: 'Boston Scientific - Compass',
-    description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration',
+    name: 'Boston Scientific — Compass',
+    tag: 'Enterprise',
+    description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration.',
     techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
     image: '/projects/bsci-compass.png',
     url: 'https://compass.bsci.com',
     website: 'https://www.bostonscientific.com',
+  },
+]
+
+// Kept for future enablement — Governance section is commented out in app/page.tsx.
+export const GOVERNANCE = {
+  eyebrow: 'Built secure by default',
+  title: 'Data governance & agentic security, automated',
+  description: 'Every pipeline ships with governance baked in — not bolted on after the security review.',
+  items: [
+    {
+      title: 'Automated data governance',
+      description: 'Classification, PII detection & redaction, and lineage tracking wired into the pipeline from day one.',
+    },
+    {
+      title: 'Agentic security best practices',
+      description: 'Scoped tool permissions, sandboxed execution, and full audit trails on every agent action.',
+    },
+    {
+      title: 'Compliance-ready',
+      description: 'SOC 2–aligned controls, least-privilege access, and encryption in transit and at rest.',
+    },
+  ],
+}
+
+// Kept for future enablement — Testimonials section is commented out in app/page.tsx.
+export const TESTIMONIALS = [
+  {
+    quote:
+      'CodeDelivered shipped our RAG pipeline in six weeks — faster than our internal team scoped it for six months. The quality held up under real load.',
+    name: 'VP of Engineering',
+    role: 'Series B fintech',
+    init: 'VP',
+  },
+  {
+    quote:
+      'The nearshore model just works. Senior engineers, same time zone, zero hand-holding. It felt like an extension of our own team from week one.',
+    name: 'Founder & CTO',
+    role: 'Healthtech startup',
+    init: 'CT',
+  },
+  {
+    quote:
+      'They treated data governance as a first-class requirement, not an afterthought. We passed our security review on the first pass.',
+    name: 'Head of Platform',
+    role: 'Legal-tech scale-up',
+    init: 'HP',
   },
 ]
 

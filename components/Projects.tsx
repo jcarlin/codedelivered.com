@@ -3,21 +3,25 @@ import ProjectCard from './ProjectCard'
 
 export default function Projects() {
   return (
-    <section id="projects" className="pt-5 md:pt-8 pb-10 md:pb-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          Featured <span className="text-gold">Projects</span>
+    <section id="work" className="cd-section wrap">
+      <div>
+        <span className="eyebrow">Featured work</span>
+        <h2 className="sec-h">
+          Shipped. <span className="g">In production.</span>
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project, index) => (
-            <ProjectCard
-              key={index}
-              {...project}
-              delay={index * 100}
-            />
-          ))}
-        </div>
+        <p className="sec-sub">
+          A sample of recent builds — from frontier-model platforms to enterprise workflow systems.
+        </p>
+      </div>
+      <div className="pj-rows">
+        {PROJECTS.map((project, index) => (
+          <ProjectCard
+            key={index}
+            {...project}
+            flip={index % 2 === 1}
+            delay={index * 80}
+          />
+        ))}
       </div>
     </section>
   )

@@ -12,7 +12,6 @@ export default function ContactForm() {
     const form = e.currentTarget
     const formData = new FormData(form)
 
-    // Honeypot spam protection - if filled, it's a bot
     const honeypot = formData.get('botcheck')
     if (honeypot) {
       setFormState('error')
@@ -20,9 +19,6 @@ export default function ContactForm() {
     }
 
     try {
-      // Using Web3Forms - free form backend with built-in spam protection
-      // Get your access key at https://web3forms.com
-      // Features: Email delivery, spam filtering, IP rate limiting
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
@@ -36,83 +32,65 @@ export default function ContactForm() {
         setFormState('error')
         setTimeout(() => setFormState('idle'), 5000)
       }
-    } catch (error) {
+    } catch {
       setFormState('error')
       setTimeout(() => setFormState('idle'), 5000)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Web3Forms Configuration */}
+    <form onSubmit={handleSubmit}>
       <input type="hidden" name="access_key" value="d1968a41-580f-4b49-b314-342cda941723" />
       <input type="hidden" name="subject" value="New Contact from CodeDelivered.com" />
       <input type="hidden" name="from_name" value="CodeDelivered Contact Form" />
-
-      {/* Honeypot spam protection - hidden field that bots fill but humans don't see */}
       <input
         type="checkbox"
         name="botcheck"
         className="hidden"
         style={{ display: 'none' }}
+        tabIndex={-1}
+        autoComplete="off"
       />
 
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-2">
-          Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          className="w-full px-4 py-3 bg-surface border border-white/10 rounded-lg focus:outline-none focus:border-gold/50 transition-colors"
-          placeholder="Your name"
-        />
+      <div className="field">
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Doe" />
       </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          className="w-full px-4 py-3 bg-surface border border-white/10 rounded-lg focus:outline-none focus:border-gold/50 transition-colors"
-          placeholder="your@email.com"
-        />
+      <div className="field">
+        <label htmlFor="email">Work email</label>
+        <input type="email" id="email" name="email" required placeholder="jane@company.com" />
       </div>
 
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
-          Message
-        </label>
+      <div className="field">
+        <label htmlFor="message">What are you building?</label>
         <textarea
           id="message"
           name="message"
           required
-          rows={5}
-          className="w-full px-4 py-3 bg-surface border border-white/10 rounded-lg focus:outline-none focus:border-gold/50 transition-colors resize-none"
-          placeholder="Tell us about your project..."
+          placeholder="A RAG platform over our internal docs, a customer-facing AI assistant, a full product rebuild…"
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={formState === 'submitting'}
-        className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {formState === 'submitting' ? 'Sending...' : 'Send Message'}
+      <button type="submit" className="btn" disabled={formState === 'submitting'} style={{ width: '100%', justifyContent: 'center' }}>
+        {formState === 'submitting' ? 'Sending…' : 'Send message'}
+        {formState !== 'submitting' && (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        )}
       </button>
 
       {formState === 'success' && (
-        <p className="text-gold text-center">Thanks! We&apos;ll get back to you within 24 hours.</p>
+        <p style={{ color: 'var(--accent-text)', textAlign: 'center', marginTop: 12 }}>
+          Thanks! We&rsquo;ll get back to you within one business day.
+        </p>
       )}
 
       {formState === 'error' && (
-        <p className="text-red-500 text-center">Something went wrong. Please try again or email us directly.</p>
+        <p style={{ color: '#ff6b6b', textAlign: 'center', marginTop: 12 }}>
+          Something went wrong. Please try again or email us directly.
+        </p>
       )}
     </form>
   )

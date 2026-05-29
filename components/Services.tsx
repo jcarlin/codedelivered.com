@@ -3,22 +3,28 @@ import ServiceCard from './ServiceCard'
 
 export default function Services() {
   return (
-    <section id="services" className="pt-10 md:pt-16 pb-5 md:pb-8">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          What We <span className="text-gold">Deliver</span>
+    <section id="services" className="cd-section wrap">
+      <div>
+        <span className="eyebrow">What we deliver</span>
+        <h2 className="sec-h">
+          Three teams in one, <span className="g">on demand.</span>
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {SERVICES.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              techStack={service.techStack}
-            />
-          ))}
-        </div>
+        <p className="sec-sub">
+          AI, product engineering, and infrastructure under one roof — scale any of them up or down as your roadmap moves.
+        </p>
+      </div>
+      <div className="svc-grid">
+        {SERVICES.map((service, index) => (
+          <ServiceCard
+            key={index}
+            n={service.n}
+            title={service.title}
+            tagline={service.tagline}
+            description={service.description}
+            points={service.points}
+            techStack={service.techStack}
+          />
+        ))}
       </div>
     </section>
   )
