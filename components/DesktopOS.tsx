@@ -88,34 +88,29 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             </span>
           </a>
 
-          {/* Right: weather/time + CTA */}
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-3 text-xs text-white/75 font-mono">
-              {temp !== null && (
-                <span className="flex items-center gap-1">
-                  <svg
-                    className="w-3.5 h-3.5 opacity-70"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
-                  </svg>
-                  {temp}°F
-                </span>
-              )}
-              <span>{formatDate(time)}</span>
-              <span>{formatTime(time)}</span>
-            </div>
-            <a href="#contact" className="btn sm">
-              Get in Touch
-            </a>
+          {/* Right: weather/time */}
+          <div className="hidden md:flex items-center gap-3 text-xs text-white/75 font-mono">
+            {temp !== null && (
+              <span className="flex items-center gap-1">
+                <svg
+                  className="w-3.5 h-3.5 opacity-70"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 7.66l-.71-.71M4.05 4.05l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                {temp}°F
+              </span>
+            )}
+            <span>{formatDate(time)}</span>
+            <span>{formatTime(time)}</span>
           </div>
         </div>
       </div>

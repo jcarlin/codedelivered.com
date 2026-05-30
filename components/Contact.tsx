@@ -19,15 +19,6 @@ function ClockIcon() {
   )
 }
 
-function PinIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" />
-      <circle cx="12" cy="10" r="2.4" />
-    </svg>
-  )
-}
-
 export default function Contact() {
   return (
     <section id="contact" className="cd-section wrap">
@@ -61,12 +52,6 @@ export default function Contact() {
                 <ClockIcon />
               </span>
               Replies within one business day
-            </div>
-            <div className="ci">
-              <span className="ico">
-                <PinIcon />
-              </span>
-              United States · Latin America
             </div>
           </div>
         </aside>
