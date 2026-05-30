@@ -3,14 +3,17 @@
 import { useEffect, useRef, useState } from 'react'
 
 interface ServiceCardProps {
+  n: string
   title: string
+  tagline: string
   description: string
+  points: string[]
   techStack: string[]
 }
 
-export default function ServiceCard({ title, description, techStack }: ServiceCardProps) {
+export default function ServiceCard({ n, title, tagline, description, points, techStack }: ServiceCardProps) {
   const [isVisible, setIsVisible] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,21 +34,32 @@ export default function ServiceCard({ title, description, techStack }: ServiceCa
   }, [])
 
   return (
-    <div
+    <article
       ref={cardRef}
-      className={`glass-card p-8 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className="svc"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+        transition: 'opacity 0.6s ease, transform 0.6s ease, border-color 0.25s ease, box-shadow 0.3s ease',
+      }}
     >
-      <h3 className="text-2xl font-bold mb-4 text-text-primary">{title}</h3>
-      <p className="text-text-secondary mb-6 leading-relaxed">{description}</p>
-      <div className="flex flex-wrap gap-2">
+      <div className="num">/ {n}</div>
+      <h3>{title}</h3>
+      <div className="tl">{tagline}</div>
+      <p>{description}</p>
+      <ul className="pts">
+        {points.map((point) => (
+          <li key={point}>{point}</li>
+        ))}
+      </ul>
+      <div className="divider"></div>
+      <div className="pills">
         {techStack.map((tech) => (
-          <span key={tech} className="tech-badge">
+          <span key={tech} className="pill">
             {tech}
           </span>
         ))}
       </div>
-    </div>
+    </article>
   )
 }

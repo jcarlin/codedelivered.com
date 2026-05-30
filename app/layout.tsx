@@ -115,6 +115,7 @@ export default function RootLayout({
       <body>
         <BackgroundImage />
         {children}
+        <div className="cd-grain" aria-hidden="true" />
       </body>
     </html>
   )

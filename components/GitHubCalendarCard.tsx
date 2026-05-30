@@ -46,31 +46,24 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
   }, [])
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <a
-        href={profileUrl}
-        rel="noopener noreferrer"
-        className="text-sm font-medium text-secondary hover:text-gold transition-colors duration-200 mb-3"
-      >
-        {label} — @{username}
-      </a>
-      <a
-        href={profileUrl}
-        rel="noopener noreferrer"
-        className="glass-card p-6 md:p-8 inline-block max-w-full cursor-pointer hover:border-gold/40 transition-all duration-300"
-      >
-        <div ref={scrollRef} className="overflow-x-auto">
-          <GitHubCalendar
-            username={username}
-            colorScheme="dark"
-            blockSize={14}
-            blockMargin={4}
-            fontSize={14}
-            transformData={(activities) => activities.filter((a) => a.date >= START_DATE)}
-            labels={{ totalCount: '{{count}} contributions since Dec 2025' }}
-          />
-        </div>
-      </a>
+    <div className="gh-card">
+      <div className="lab">
+        <span>{label}</span>
+        <a href={profileUrl} target="_blank" rel="noreferrer">
+          View profile →
+        </a>
+      </div>
+      <div ref={scrollRef} className="overflow-x-auto">
+        <GitHubCalendar
+          username={username}
+          colorScheme="dark"
+          blockSize={14}
+          blockMargin={4}
+          fontSize={14}
+          transformData={(activities) => activities.filter((a) => a.date >= START_DATE)}
+          labels={{ totalCount: '{{count}} contributions since Dec 2025' }}
+        />
+      </div>
     </div>
   )
 }
