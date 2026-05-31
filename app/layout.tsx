@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import BackgroundImage from '@/components/BackgroundImage'
 import './globals.css'
 
@@ -115,6 +116,7 @@ export default function RootLayout({
       <body>
         <BackgroundImage />
         {children}
+        <Analytics />
         <div className="cd-grain" aria-hidden="true" />
       </body>
     </html>
