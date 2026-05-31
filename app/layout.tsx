@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import BackgroundImage from '@/components/BackgroundImage'
 import './globals.css'
@@ -117,6 +118,13 @@ export default function RootLayout({
         <BackgroundImage />
         {children}
         <Analytics />
+        {process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN && (
+          <Script
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            strategy="afterInteractive"
+            data-cf-beacon={`{"token": "${process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN}"}`}
+          />
+        )}
         <div className="cd-grain" aria-hidden="true" />
       </body>
     </html>
