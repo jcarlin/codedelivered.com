@@ -49,14 +49,14 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div
-        className="fixed top-0 left-0 right-0 h-12 bg-black/40 backdrop-blur-xl border-b border-white/10 z-50"
+        className="fixed top-0 left-0 right-0 h-12 bg-white/80 backdrop-blur-md border-b border-black/[0.08] z-50"
         style={{ transform: 'translateZ(0)' }}
       >
-        <div className="flex items-center justify-between h-full px-4 md:px-6 text-white/90">
+        <div className="flex items-center justify-between h-full px-4 md:px-6 text-[#1C1C1C]">
           {/* Left: brand lockup */}
           <a
             href="#top"
-            className="flex items-center gap-2.5 text-white no-underline"
+            className="flex items-center gap-2.5 text-[#1C1C1C] no-underline"
             aria-label="CodeDelivered home"
           >
             <span
@@ -66,9 +66,8 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
                 height: 28,
                 borderRadius: 8,
                 background: 'var(--accent)',
-                color: '#1a1305',
+                color: '#FFFFFF',
                 fontSize: 13,
-                boxShadow: '0 6px 18px -8px var(--glow)',
                 flex: 'none',
               }}
               aria-hidden="true"
@@ -77,19 +76,19 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             </span>
             <span
               style={{
-                fontFamily: 'var(--font-head)',
-                fontWeight: 800,
+                fontFamily: 'var(--font-body)',
+                fontWeight: 700,
                 fontSize: 16,
                 letterSpacing: '-0.01em',
                 whiteSpace: 'nowrap',
               }}
             >
-              Code<b style={{ color: 'var(--accent)', fontWeight: 800 }}>Delivered</b>
+              Code<b style={{ color: 'var(--accent)', fontWeight: 700 }}>Delivered</b>
             </span>
           </a>
 
           {/* Right: weather/time */}
-          <div className="hidden md:flex items-center gap-3 text-xs text-white/75 font-mono">
+          <div className="hidden md:flex items-center gap-3 text-xs text-[#636363] font-mono">
             {temp !== null && (
               <span className="flex items-center gap-1">
                 <svg

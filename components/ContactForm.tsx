@@ -88,7 +88,7 @@ export default function ContactForm() {
       )}
 
       {formState === 'error' && (
-        <p style={{ color: '#ff6b6b', textAlign: 'center', marginTop: 12 }}>
+        <p style={{ color: '#DC2626', textAlign: 'center', marginTop: 12 }}>
           Something went wrong. Please try again or email us directly.
         </p>
       )}

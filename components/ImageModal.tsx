@@ -11,7 +11,6 @@ interface ImageModalProps {
 }
 
 export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalProps) {
-  // Close on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -19,7 +18,6 @@ export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: Imag
 
     if (isOpen) {
       document.addEventListener('keydown', handleEscape)
-      // Prevent scrolling when modal is open
       document.body.style.overflow = 'hidden'
     }
 
@@ -36,22 +34,19 @@ export default function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: Imag
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm animate-fadeIn"
       onClick={onClose}
     >
-      {/* Modal Content */}
       <div
         className="relative w-full max-w-6xl max-h-[90vh] animate-scaleIn"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute -top-12 right-0 text-white hover:text-gold transition-colors duration-200 text-sm font-medium"
+          className="absolute -top-12 right-0 text-white/90 hover:text-white transition-colors duration-200 text-sm font-medium"
           aria-label="Close modal"
         >
           Close (Esc)
         </button>
 
-        {/* Image Container */}
-        <div className="relative w-full h-full rounded-lg overflow-hidden border border-gold/30 shadow-2xl shadow-gold/20">
+        <div className="relative w-full h-full rounded-lg overflow-hidden border border-white/20 shadow-2xl">
           <Image
             src={imageSrc}
             alt={imageAlt}
