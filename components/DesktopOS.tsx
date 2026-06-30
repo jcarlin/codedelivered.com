@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function DesktopOS({ children }: { children: React.ReactNode }) {
   const [time, setTime] = useState(new Date())
@@ -49,14 +50,20 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div
-        className="fixed top-0 left-0 right-0 h-12 bg-black/40 backdrop-blur-xl border-b border-white/10 z-50"
-        style={{ transform: 'translateZ(0)' }}
+        className="fixed top-0 left-0 right-0 h-12 backdrop-blur-xl z-50"
+        style={{
+          transform: 'translateZ(0)',
+          background: 'color-mix(in oklch, var(--panel) 72%, transparent)',
+          borderBottom: '1px solid var(--line)',
+          color: 'var(--text)',
+        }}
       >
-        <div className="flex items-center justify-between h-full px-4 md:px-6 text-white/90">
+        <div className="flex items-center justify-between h-full px-4 md:px-6">
           {/* Left: brand lockup */}
           <a
             href="#top"
-            className="flex items-center gap-2.5 text-white no-underline"
+            className="flex items-center gap-2.5 no-underline"
+            style={{ color: 'var(--text)' }}
             aria-label="CodeDelivered home"
           >
             <span
@@ -88,12 +95,17 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             </span>
           </a>
 
-          {/* Right: weather/time */}
-          <div className="hidden md:flex items-center gap-3 text-xs text-white/75 font-mono">
-            {temp !== null && (
-              <span className="flex items-center gap-1">
-                <svg
-                  className="w-3.5 h-3.5 opacity-70"
+          {/* Right: theme toggle + weather/time */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <ThemeToggle />
+            <div
+              className="hidden md:flex items-center gap-3 text-xs font-mono"
+              style={{ color: 'var(--muted)' }}
+            >
+              {temp !== null && (
+                <span className="flex items-center gap-1">
+                  <svg
+                    className="w-3.5 h-3.5 opacity-70"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -109,8 +121,9 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
                 {temp}°F
               </span>
             )}
-            <span>{formatDate(time)}</span>
-            <span>{formatTime(time)}</span>
+              <span>{formatDate(time)}</span>
+              <span>{formatTime(time)}</span>
+            </div>
           </div>
         </div>
       </div>

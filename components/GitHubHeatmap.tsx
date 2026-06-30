@@ -2,7 +2,7 @@ import GitHubCalendarCard from './GitHubCalendarCard'
 
 export default function GitHubHeatmap() {
   return (
-    <section id="github" className="reveal cd-section">
+    <section id="github" className="cd-page cd-section">
       <div className="wrap">
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '70ch' }}>
           <span className="eyebrow">Always shipping</span>

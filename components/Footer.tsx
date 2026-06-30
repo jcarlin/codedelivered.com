@@ -3,9 +3,16 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 h-14 bg-black/40 backdrop-blur-xl border-t border-white/10 z-50" style={{ transform: 'translateZ(0)' }}>
+    <footer
+      className="fixed bottom-0 left-0 right-0 h-14 backdrop-blur-xl z-50"
+      style={{
+        transform: 'translateZ(0)',
+        background: 'color-mix(in oklch, var(--panel) 72%, transparent)',
+        borderTop: '1px solid var(--line)',
+      }}
+    >
       <div className="flex items-center justify-end h-full px-4">
-        <div className="flex items-center gap-4 pl-4 border-l border-white/10">
+        <div className="flex items-center gap-4 pl-4" style={{ borderLeft: '1px solid var(--line)' }}>
           <a
             href={SOCIAL_LINKS.linkedin}
             target="_blank"
@@ -33,7 +40,7 @@ export default function Footer() {
               alt="GitHub"
               width={20}
               height={20}
-              className="w-5 h-5"
+              className="w-5 h-5 gh-mark"
             />
           </a>
         </div>

@@ -106,8 +106,14 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-theme="warm">
       <head>
+        {/* Apply the saved color theme before first paint to avoid a flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('cd-theme');if(t&&['warm','crisp','tinted','dark'].indexOf(t)!==-1){document.documentElement.dataset.theme=t;}}catch(e){}})();`,
+          }}
+        />
         {/* JSON-LD for AI crawlers and search engines */}
         <script
           type="application/ld+json"
