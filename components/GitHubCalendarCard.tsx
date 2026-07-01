@@ -18,16 +18,24 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
     const el = scrollRef.current
     if (!el) return
 
-    const observer = new ResizeObserver(() => {
+    // Pin the view to the most recent (right-most) weeks.
+    const scrollRight = () => {
       if (el.scrollWidth > el.clientWidth) {
         el.scrollLeft = el.scrollWidth
       }
-    })
+    }
+
+    const observer = new ResizeObserver(scrollRight)
 
     const watchChild = () => {
       const child = el.firstElementChild
       if (child) {
         observer.observe(child)
+        // a couple of frames so it lands right after the calendar paints
+        requestAnimationFrame(() => {
+          scrollRight()
+          requestAnimationFrame(scrollRight)
+        })
       }
     }
 
@@ -53,7 +61,7 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
           View profile →
         </a>
       </div>
-      <div ref={scrollRef} className="overflow-x-auto max-w-full min-w-0">
+      <div ref={scrollRef} className="gh-scroll max-w-full min-w-0">
         <GitHubCalendar
           username={username}
           colorScheme="dark"

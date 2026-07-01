@@ -750,6 +750,28 @@
     transform: translateY(-3px);
     box-shadow: 0 0 50px -16px var(--glow);
   }
+  /* each calendar gets its own visible horizontal scrollbar, pinned right */
+  .gh-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--accent-line) rgba(255, 255, 255, 0.08);
+  }
+  .gh-scroll::-webkit-scrollbar {
+    height: 9px;
+  }
+  .gh-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+  }
+  .gh-scroll::-webkit-scrollbar-thumb {
+    background: var(--accent-line);
+    border-radius: 999px;
+  }
+  .gh-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
   .gh-card .lab {
     font-family: var(--font-mono);
     font-size: 14px;
