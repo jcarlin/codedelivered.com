@@ -25,31 +25,29 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
       }
     }
 
+    // The calendar loads its data asynchronously, so keep re-pinning as the
+    // DOM/size settles instead of giving up after the first change.
     const observer = new ResizeObserver(scrollRight)
-
-    const watchChild = () => {
-      const child = el.firstElementChild
-      if (child) {
-        observer.observe(child)
-        // a couple of frames so it lands right after the calendar paints
-        requestAnimationFrame(() => {
-          scrollRight()
-          requestAnimationFrame(scrollRight)
-        })
-      }
+    const observeChildren = () => {
+      for (const child of Array.from(el.children)) observer.observe(child)
     }
-
-    watchChild()
+    observeChildren()
 
     const mutation = new MutationObserver(() => {
-      watchChild()
-      mutation.disconnect()
+      observeChildren()
+      scrollRight()
     })
-    mutation.observe(el, { childList: true })
+    mutation.observe(el, { childList: true, subtree: true })
+
+    // Timed fallbacks covering the async fetch/paint window.
+    const timers = [50, 200, 500, 900, 1400, 2000].map((t) =>
+      window.setTimeout(scrollRight, t)
+    )
 
     return () => {
       observer.disconnect()
       mutation.disconnect()
+      timers.forEach((id) => window.clearTimeout(id))
     }
   }, [])
 
