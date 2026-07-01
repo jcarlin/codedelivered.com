@@ -15,9 +15,11 @@ export default function Home() {
       <main className="min-h-screen pb-14">
         <Hero />
 
-        {/* Solid block: services + projects (governance + testimonials disabled per request) */}
+        {/* Services extends the hero photo as its background (reveal) */}
+        <Services />
+
+        {/* Solid block: projects (governance + testimonials disabled per request) */}
         <div className="cd-page">
-          <Services />
           {/* <Governance /> */}
           <Projects />
           {/* <Testimonials /> */}
