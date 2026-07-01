@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import ThemeToggle from './ThemeToggle'
 
 export default function DesktopOS({ children }: { children: React.ReactNode }) {
   const [time, setTime] = useState(new Date())
@@ -78,14 +77,13 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
         }}
       >
         <div className="flex items-center justify-between h-full px-4 md:px-6">
-          {/* Left: brand lockup + theme toggle */}
-          <div className="flex items-center gap-3 md:gap-5">
-            <a
-              href="#top"
-              className="flex items-center gap-2.5 no-underline"
-              style={{ color: 'var(--text)' }}
-              aria-label="CodeDelivered home"
-            >
+          {/* Left: brand lockup */}
+          <a
+            href="#top"
+            className="flex items-center gap-2.5 no-underline"
+            style={{ color: 'var(--text)' }}
+            aria-label="CodeDelivered home"
+          >
             <span
               className="grid place-items-center font-mono font-bold"
               style={{
@@ -113,14 +111,12 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             >
               Code<b style={{ color: 'var(--accent)', fontWeight: 800 }}>Delivered</b>
             </span>
-            </a>
-            <ThemeToggle />
-          </div>
+          </a>
 
           {/* Right: desktop weather / date / time widget */}
           <div
-            className="hidden md:flex items-center gap-3 text-xs font-mono"
-            style={{ color: 'var(--muted)' }}
+            className="flex items-center gap-3 text-xs font-mono"
+            style={{ color: 'var(--text)' }}
           >
               {temp !== null && (
                 <span className="flex items-center gap-1">
@@ -141,7 +137,7 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
                 {temp}°F
               </span>
             )}
-            <span>{formatDate(time)}</span>
+            <span className="hidden sm:inline">{formatDate(time)}</span>
             <span>{formatTime(time)}</span>
           </div>
         </div>
