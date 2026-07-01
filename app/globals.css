@@ -741,6 +741,9 @@
     background: rgba(12, 10, 10, 0.6);
     backdrop-filter: blur(6px);
     transition: border-color 0.25s, transform 0.25s, box-shadow 0.3s;
+    /* grid items default to min-width:auto, which lets the wide calendar SVG
+       stretch the card past its column — pin to 0 so the inner scroller works */
+    min-width: 0;
   }
   .gh-card:hover {
     border-color: var(--accent-line);
