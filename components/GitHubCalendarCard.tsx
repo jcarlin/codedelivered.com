@@ -56,7 +56,7 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
       <div ref={scrollRef} className="overflow-x-auto">
         <GitHubCalendar
           username={username}
-          colorScheme="light"
+          colorScheme="dark"
           blockSize={14}
           blockMargin={4}
           fontSize={14}

@@ -13,11 +13,11 @@ const THEMES: { id: Theme; label: string }[] = [
 const STORAGE_KEY = 'cd-theme'
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>('warm')
+  const [theme, setTheme] = useState<Theme>('tinted')
 
   // Reflect whatever the no-flash init script already applied to <html>.
   useEffect(() => {
-    const current = (document.documentElement.dataset.theme as Theme) || 'warm'
+    const current = (document.documentElement.dataset.theme as Theme) || 'tinted'
     if (THEMES.some((t) => t.id === current)) setTheme(current)
   }, [])
 

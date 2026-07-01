@@ -16,9 +16,32 @@
     --gut: clamp(20px, 5vw, 64px);
   }
 
-  /* ---- Default theme: Warm editorial paper -------------------------------- */
+  /* ---- Default theme: Soft tinted ----------------------------------------- */
   /* Lives on :root so the site is light before JS runs and for no-JS. */
   :root,
+  html[data-theme='tinted'] {
+    --bg: #fcfbf8;
+    --bg-2: #f6f2e9;
+    --panel: #fffefb;
+    --panel-2: #faf6ee;
+    --panel-grad: linear-gradient(165deg, #fffefb 0%, #fdfaf3 55%, #f8f1e4 100%);
+    --line: rgba(34, 30, 24, 0.09);
+    --line-2: rgba(34, 30, 24, 0.15);
+    --text: #221e18;
+    --muted: #726a5d;
+    --muted-2: #a59c8c;
+    /* deeper gold for text/links/pills so accent meets contrast on light */
+    --accent-text: #ad7510;
+    --accent-tint: color-mix(in oklch, var(--accent) 18%, transparent);
+    --accent-line: color-mix(in oklch, var(--accent) 52%, transparent);
+    --glow: color-mix(in oklch, var(--accent) 34%, transparent);
+    --shadow: 0 1px 2px rgba(40, 32, 18, 0.05), 0 18px 40px -18px rgba(40, 32, 18, 0.2);
+    --wash: radial-gradient(120% 90% at 12% -10%, color-mix(in oklch, var(--accent) 13%, transparent), transparent 58%);
+    --grain: 0.04;
+    color-scheme: light;
+  }
+
+  /* ---- Warm editorial paper ----------------------------------------------- */
   html[data-theme='warm'] {
     --bg: #fbf9f4;
     --bg-2: #f4f1ea;
@@ -30,7 +53,6 @@
     --text: #1a1714;
     --muted: #6b655c;
     --muted-2: #9b948a;
-    /* deeper gold for text/links/pills so accent meets contrast on light */
     --accent-text: #99680c;
     --accent-tint: color-mix(in oklch, var(--accent) 16%, transparent);
     --accent-line: color-mix(in oklch, var(--accent) 50%, transparent);
@@ -60,28 +82,6 @@
     --shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 10px 26px -16px rgba(15, 17, 21, 0.16);
     --wash: radial-gradient(120% 90% at 12% -10%, rgba(15, 17, 21, 0.018), transparent 55%);
     --grain: 0.015;
-    color-scheme: light;
-  }
-
-  /* ---- Soft tinted -------------------------------------------------------- */
-  html[data-theme='tinted'] {
-    --bg: #fcfbf8;
-    --bg-2: #f6f2e9;
-    --panel: #fffefb;
-    --panel-2: #faf6ee;
-    --panel-grad: linear-gradient(165deg, #fffefb 0%, #fdfaf3 55%, #f8f1e4 100%);
-    --line: rgba(34, 30, 24, 0.09);
-    --line-2: rgba(34, 30, 24, 0.15);
-    --text: #221e18;
-    --muted: #726a5d;
-    --muted-2: #a59c8c;
-    --accent-text: #ad7510;
-    --accent-tint: color-mix(in oklch, var(--accent) 18%, transparent);
-    --accent-line: color-mix(in oklch, var(--accent) 52%, transparent);
-    --glow: color-mix(in oklch, var(--accent) 34%, transparent);
-    --shadow: 0 1px 2px rgba(40, 32, 18, 0.05), 0 18px 40px -18px rgba(40, 32, 18, 0.2);
-    --wash: radial-gradient(120% 90% at 12% -10%, color-mix(in oklch, var(--accent) 13%, transparent), transparent 58%);
-    --grain: 0.04;
     color-scheme: light;
   }
 
@@ -727,22 +727,22 @@
     margin-top: 48px;
   }
   .gh-card {
-    border: 1px solid var(--line);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 16px;
     padding: 24px;
-    background: var(--panel-grad);
-    box-shadow: var(--shadow);
+    background: rgba(12, 10, 10, 0.6);
+    backdrop-filter: blur(6px);
     transition: border-color 0.25s, transform 0.25s, box-shadow 0.3s;
   }
   .gh-card:hover {
     border-color: var(--accent-line);
     transform: translateY(-3px);
-    box-shadow: var(--shadow), 0 0 50px -16px var(--glow);
+    box-shadow: 0 0 50px -16px var(--glow);
   }
   .gh-card .lab {
     font-family: var(--font-mono);
     font-size: 14px;
-    color: var(--text);
+    color: #fff;
     margin-bottom: 16px;
     display: flex;
     justify-content: space-between;

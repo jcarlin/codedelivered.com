@@ -41,7 +41,7 @@ export default function EditorStack() {
   const packages = currentView === 'python' ? PYTHON_PACKAGES : JAVASCRIPT_PACKAGES
 
   return (
-    <section id="editor" className="cd-page cd-section">
+    <section id="editor" className="reveal cd-section">
       <div className="wrap">
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '70ch' }}>
           <span className="eyebrow">Inside the workshop</span>

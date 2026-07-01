@@ -19,14 +19,33 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
+    // Resolve approximate coordinates from the visitor's IP (no browser prompt).
+    // Two providers are tried so a single outage doesn't drop the temperature.
+    const resolveCoords = async (): Promise<{ lat: number; lon: number } | null> => {
+      try {
+        const r = await fetch('https://ipapi.co/json/')
+        const g = await r.json()
+        if (g.latitude && g.longitude) return { lat: g.latitude, lon: g.longitude }
+      } catch {
+        // fall through to the backup provider
+      }
+      try {
+        const r = await fetch('https://ipwho.is/')
+        const g = await r.json()
+        if (g.latitude && g.longitude) return { lat: g.latitude, lon: g.longitude }
+      } catch {
+        // give up — keep showing the cached value (if any) and date/time
+      }
+      return null
+    }
+
     const fetchWeather = async () => {
       try {
-        const geoRes = await fetch('https://ipapi.co/json/')
-        const geo = await geoRes.json()
-        if (!geo.latitude || !geo.longitude) return
+        const coords = await resolveCoords()
+        if (!coords) return
 
         const weatherRes = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${geo.latitude}&longitude=${geo.longitude}&current=temperature_2m&temperature_unit=fahrenheit`
+          `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&current=temperature_2m&temperature_unit=fahrenheit`
         )
         const weather = await weatherRes.json()
         if (weather.current?.temperature_2m != null) {
@@ -35,7 +54,7 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
           localStorage.setItem('cachedTemp', String(rounded))
         }
       } catch {
-        // Silently fail
+        // Silently fail — date/time still render
       }
     }
 
@@ -59,13 +78,14 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
         }}
       >
         <div className="flex items-center justify-between h-full px-4 md:px-6">
-          {/* Left: brand lockup */}
-          <a
-            href="#top"
-            className="flex items-center gap-2.5 no-underline"
-            style={{ color: 'var(--text)' }}
-            aria-label="CodeDelivered home"
-          >
+          {/* Left: brand lockup + theme toggle */}
+          <div className="flex items-center gap-3 md:gap-5">
+            <a
+              href="#top"
+              className="flex items-center gap-2.5 no-underline"
+              style={{ color: 'var(--text)' }}
+              aria-label="CodeDelivered home"
+            >
             <span
               className="grid place-items-center font-mono font-bold"
               style={{
@@ -93,15 +113,15 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             >
               Code<b style={{ color: 'var(--accent)', fontWeight: 800 }}>Delivered</b>
             </span>
-          </a>
-
-          {/* Right: theme toggle + weather/time */}
-          <div className="flex items-center gap-3 md:gap-4">
+            </a>
             <ThemeToggle />
-            <div
-              className="hidden md:flex items-center gap-3 text-xs font-mono"
-              style={{ color: 'var(--muted)' }}
-            >
+          </div>
+
+          {/* Right: desktop weather / date / time widget */}
+          <div
+            className="hidden md:flex items-center gap-3 text-xs font-mono"
+            style={{ color: 'var(--muted)' }}
+          >
               {temp !== null && (
                 <span className="flex items-center gap-1">
                   <svg
@@ -121,9 +141,8 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
                 {temp}°F
               </span>
             )}
-              <span>{formatDate(time)}</span>
-              <span>{formatTime(time)}</span>
-            </div>
+            <span>{formatDate(time)}</span>
+            <span>{formatTime(time)}</span>
           </div>
         </div>
       </div>

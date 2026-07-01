@@ -106,7 +106,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="scroll-smooth" data-theme="warm">
+    <html lang="en" className="scroll-smooth" data-theme="tinted">
       <head>
         {/* Apply the saved color theme before first paint to avoid a flash */}
         <script
