@@ -190,7 +190,6 @@
     display: flex;
     gap: 16px;
     margin-top: 38px;
-    flex-wrap: wrap;
   }
   .hero-eyebrow {
     font-family: var(--font-mono);
