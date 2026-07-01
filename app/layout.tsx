@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
-import BackgroundImage from '@/components/BackgroundImage'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -115,7 +114,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <BackgroundImage />
         {children}
         <Analytics />
         {process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN && (
@@ -125,7 +123,6 @@ export default function RootLayout({
             data-cf-beacon={`{"token": "${process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN}"}`}
           />
         )}
-        <div className="cd-grain" aria-hidden="true" />
       </body>
     </html>
   )
