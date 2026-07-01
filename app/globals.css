@@ -269,6 +269,15 @@
     color: var(--accent-text);
     box-shadow: none;
   }
+  /* hero ghost button sits on the photo — keep its text white */
+  .hero .btn.ghost {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+  .hero .btn.ghost:hover {
+    color: #fff;
+    border-color: #fff;
+  }
   .btn.sm {
     padding: 9px 18px;
     font-size: 14px;
