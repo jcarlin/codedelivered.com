@@ -106,7 +106,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" data-theme="tinted">
       <head>
         {/* JSON-LD for AI crawlers and search engines */}
         <script

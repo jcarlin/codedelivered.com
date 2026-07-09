@@ -1,6 +1,5 @@
 import DesktopOS from '@/components/DesktopOS'
 import Hero from '@/components/Hero'
-import ProofStrip from '@/components/ProofStrip'
 import Services from '@/components/Services'
 // import Governance from '@/components/Governance' // disabled — uncomment to enable section
 import Projects from '@/components/Projects'
@@ -16,10 +15,11 @@ export default function Home() {
       <main className="min-h-screen pb-14">
         <Hero />
 
-        {/* Solid block: proof + services + projects (governance + testimonials disabled per request) */}
+        {/* Services extends the hero photo as its background (reveal) */}
+        <Services />
+
+        {/* Solid block: projects (governance + testimonials disabled per request) */}
         <div className="cd-page">
-          <ProofStrip />
-          <Services />
           {/* <Governance /> */}
           <Projects />
           {/* <Testimonials /> */}

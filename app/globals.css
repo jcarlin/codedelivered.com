@@ -5,15 +5,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @layer base {
+  /* ---- Shared, theme-independent tokens ---------------------------------- */
   :root {
-    --accent: #f2b21e;
+    --accent: #f2b21e; /* bright gold — solid fills only (buttons, logo box) */
     --font-head: 'Sora', system-ui, sans-serif;
     --font-body: 'Hanken Grotesk', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
     --r: 18px;
     --maxw: 1200px;
     --gut: clamp(20px, 5vw, 64px);
+  }
 
+  /* ---- Default theme: Soft tinted ----------------------------------------- */
+  /* Lives on :root so the site is light before JS runs and for no-JS. */
+  :root,
+  html[data-theme='tinted'] {
+    --bg: #fcfbf8;
+    --bg-2: #f6f2e9;
+    --panel: #fffefb;
+    --panel-2: #faf6ee;
+    --panel-grad: linear-gradient(165deg, #fffefb 0%, #fdfaf3 55%, #f8f1e4 100%);
+    --line: rgba(34, 30, 24, 0.09);
+    --line-2: rgba(34, 30, 24, 0.15);
+    --text: #221e18;
+    --muted: #726a5d;
+    --muted-2: #a59c8c;
+    /* deeper gold for text/links/pills so accent meets contrast on light */
+    --accent-text: #ad7510;
+    --accent-tint: color-mix(in oklch, var(--accent) 18%, transparent);
+    --accent-line: color-mix(in oklch, var(--accent) 52%, transparent);
+    --glow: color-mix(in oklch, var(--accent) 34%, transparent);
+    --shadow: 0 1px 2px rgba(40, 32, 18, 0.05), 0 18px 40px -18px rgba(40, 32, 18, 0.2);
+    --wash: radial-gradient(120% 90% at 12% -10%, color-mix(in oklch, var(--accent) 13%, transparent), transparent 58%);
+    --grain: 0.04;
+    color-scheme: light;
+  }
+
+  /* ---- Warm editorial paper ----------------------------------------------- */
+  html[data-theme='warm'] {
+    --bg: #fbf9f4;
+    --bg-2: #f4f1ea;
+    --panel: #ffffff;
+    --panel-2: #faf7f1;
+    --panel-grad: linear-gradient(165deg, #ffffff 0%, #fbf9f3 60%, #f6f1e8 100%);
+    --line: rgba(26, 23, 20, 0.1);
+    --line-2: rgba(26, 23, 20, 0.16);
+    --text: #1a1714;
+    --muted: #6b655c;
+    --muted-2: #9b948a;
+    --accent-text: #99680c;
+    --accent-tint: color-mix(in oklch, var(--accent) 16%, transparent);
+    --accent-line: color-mix(in oklch, var(--accent) 50%, transparent);
+    --glow: color-mix(in oklch, var(--accent) 30%, transparent);
+    --shadow: 0 1px 2px rgba(20, 16, 10, 0.04), 0 16px 36px -18px rgba(20, 16, 10, 0.18);
+    --wash: radial-gradient(120% 90% at 12% -10%, color-mix(in oklch, var(--accent) 10%, transparent), transparent 55%);
+    --grain: 0.03;
+    color-scheme: light;
+  }
+
+  /* ---- Crisp minimal ------------------------------------------------------ */
+  html[data-theme='crisp'] {
+    --bg: #ffffff;
+    --bg-2: #f6f7f9;
+    --panel: #ffffff;
+    --panel-2: #fafbfc;
+    --panel-grad: linear-gradient(165deg, #ffffff 0%, #fcfdfe 60%, #f6f7fa 100%);
+    --line: rgba(15, 17, 21, 0.08);
+    --line-2: rgba(15, 17, 21, 0.14);
+    --text: #0f1115;
+    --muted: #5a6172;
+    --muted-2: #9aa0ab;
+    --accent-text: #8a5e0a;
+    --accent-tint: color-mix(in oklch, var(--accent) 13%, transparent);
+    --accent-line: color-mix(in oklch, var(--accent) 44%, transparent);
+    --glow: color-mix(in oklch, var(--accent) 22%, transparent);
+    --shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 10px 26px -16px rgba(15, 17, 21, 0.16);
+    --wash: radial-gradient(120% 90% at 12% -10%, rgba(15, 17, 21, 0.018), transparent 55%);
+    --grain: 0.015;
+    color-scheme: light;
+  }
+
+  /* ---- Original dark (kept for comparison) -------------------------------- */
+  html[data-theme='dark'] {
     --bg: #0a0a0b;
     --bg-2: #0f0f11;
     --panel: #111114;
@@ -42,6 +115,13 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* never allow the page to pan sideways on touch devices */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -73,6 +153,10 @@
     pointer-events: none;
     opacity: var(--grain);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    /* multiply lays grain as paper texture on light surfaces */
+    mix-blend-mode: multiply;
+  }
+  html[data-theme='dark'] .cd-grain {
     mix-blend-mode: overlay;
   }
 
@@ -192,6 +276,15 @@
     color: var(--accent-text);
     box-shadow: none;
   }
+  /* hero ghost button sits on the photo — keep its text white */
+  .hero .btn.ghost {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+  .hero .btn.ghost:hover {
+    color: #fff;
+    border-color: #fff;
+  }
   .btn.sm {
     padding: 9px 18px;
     font-size: 14px;
@@ -234,6 +327,20 @@
     gap: 16px;
     margin-top: 38px;
     flex-wrap: wrap;
+  }
+  /* keep both CTAs on one row on phones */
+  @media (max-width: 480px) {
+    .hero .cta {
+      flex-wrap: nowrap;
+      gap: 10px;
+    }
+    .hero .cta .btn {
+      flex: 1 1 0;
+      justify-content: center;
+      padding: 13px 14px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
   }
   .hero-eyebrow {
     font-family: var(--font-mono);
@@ -572,6 +679,21 @@
     border-color: var(--accent-line);
     background: color-mix(in oklch, var(--accent) 10%, transparent);
   }
+  /* keep the editor tab bar inside the card on small phones */
+  @media (max-width: 560px) {
+    .editor-bar {
+      padding: 11px 12px;
+      gap: 9px;
+    }
+    .etabs {
+      margin-left: 4px;
+      min-width: 0;
+    }
+    .etab {
+      font-size: 11.5px;
+      padding: 6px 9px;
+    }
+  }
   .ecode {
     font-family: var(--font-mono);
     font-size: 13.5px;
@@ -619,11 +741,36 @@
     background: rgba(12, 10, 10, 0.6);
     backdrop-filter: blur(6px);
     transition: border-color 0.25s, transform 0.25s, box-shadow 0.3s;
+    /* grid items default to min-width:auto, which lets the wide calendar SVG
+       stretch the card past its column — pin to 0 so the inner scroller works */
+    min-width: 0;
   }
   .gh-card:hover {
     border-color: var(--accent-line);
     transform: translateY(-3px);
     box-shadow: 0 0 50px -16px var(--glow);
+  }
+  /* each calendar gets its own visible horizontal scrollbar, pinned right */
+  .gh-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--accent-line) rgba(255, 255, 255, 0.08);
+  }
+  .gh-scroll::-webkit-scrollbar {
+    height: 9px;
+  }
+  .gh-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+  }
+  .gh-scroll::-webkit-scrollbar-thumb {
+    background: var(--accent-line);
+    border-radius: 999px;
+  }
+  .gh-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
   }
   .gh-card .lab {
     font-family: var(--font-mono);
@@ -749,6 +896,14 @@
 @layer utilities {
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* GitHub mark ships white; invert it to dark on light themes */
+  .gh-mark {
+    filter: invert(1);
+  }
+  html[data-theme='dark'] .gh-mark {
+    filter: none;
   }
 
   .animate-fadeIn {

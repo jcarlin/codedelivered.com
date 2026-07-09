@@ -18,14 +18,33 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
+    // Resolve approximate coordinates from the visitor's IP (no browser prompt).
+    // Two providers are tried so a single outage doesn't drop the temperature.
+    const resolveCoords = async (): Promise<{ lat: number; lon: number } | null> => {
+      try {
+        const r = await fetch('https://ipapi.co/json/')
+        const g = await r.json()
+        if (g.latitude && g.longitude) return { lat: g.latitude, lon: g.longitude }
+      } catch {
+        // fall through to the backup provider
+      }
+      try {
+        const r = await fetch('https://ipwho.is/')
+        const g = await r.json()
+        if (g.latitude && g.longitude) return { lat: g.latitude, lon: g.longitude }
+      } catch {
+        // give up — keep showing the cached value (if any) and date/time
+      }
+      return null
+    }
+
     const fetchWeather = async () => {
       try {
-        const geoRes = await fetch('https://ipapi.co/json/')
-        const geo = await geoRes.json()
-        if (!geo.latitude || !geo.longitude) return
+        const coords = await resolveCoords()
+        if (!coords) return
 
         const weatherRes = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${geo.latitude}&longitude=${geo.longitude}&current=temperature_2m&temperature_unit=fahrenheit`
+          `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&current=temperature_2m&temperature_unit=fahrenheit`
         )
         const weather = await weatherRes.json()
         if (weather.current?.temperature_2m != null) {
@@ -34,7 +53,7 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
           localStorage.setItem('cachedTemp', String(rounded))
         }
       } catch {
-        // Silently fail
+        // Silently fail — date/time still render
       }
     }
 
@@ -49,14 +68,20 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div
-        className="fixed top-0 left-0 right-0 h-12 bg-black/40 backdrop-blur-xl border-b border-white/10 z-50"
-        style={{ transform: 'translateZ(0)' }}
+        className="fixed top-0 left-0 right-0 h-12 backdrop-blur-xl z-50"
+        style={{
+          transform: 'translateZ(0)',
+          background: 'color-mix(in oklch, var(--panel) 72%, transparent)',
+          borderBottom: '1px solid var(--line)',
+          color: 'var(--text)',
+        }}
       >
-        <div className="flex items-center justify-between h-full px-4 md:px-6 text-white/90">
+        <div className="flex items-center justify-between h-full px-4 md:px-6">
           {/* Left: brand lockup */}
           <a
             href="#top"
-            className="flex items-center gap-2.5 text-white no-underline"
+            className="flex items-center gap-2.5 no-underline"
+            style={{ color: 'var(--text)' }}
             aria-label="CodeDelivered home"
           >
             <span
@@ -88,12 +113,15 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             </span>
           </a>
 
-          {/* Right: weather/time */}
-          <div className="hidden md:flex items-center gap-3 text-xs text-white/75 font-mono">
-            {temp !== null && (
-              <span className="flex items-center gap-1">
-                <svg
-                  className="w-3.5 h-3.5 opacity-70"
+          {/* Right: desktop weather / date / time widget */}
+          <div
+            className="flex items-center gap-3 text-xs font-mono"
+            style={{ color: 'var(--text)' }}
+          >
+              {temp !== null && (
+                <span className="flex items-center gap-1">
+                  <svg
+                    className="w-3.5 h-3.5 opacity-70"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -109,7 +137,7 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
                 {temp}°F
               </span>
             )}
-            <span>{formatDate(time)}</span>
+            <span className="hidden sm:inline">{formatDate(time)}</span>
             <span>{formatTime(time)}</span>
           </div>
         </div>
