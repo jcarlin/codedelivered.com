@@ -106,8 +106,15 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="scroll-smooth" data-theme="tinted">
+    <html lang="en" className="scroll-smooth" data-theme="tinted" suppressHydrationWarning>
       <head>
+        {/* Set the theme before first paint so there's no flash of the wrong
+            palette on reload. Reads the saved choice, else the device setting. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var p=localStorage.getItem('theme');var t=p==='light'?'tinted':p==='dark'?'dark':(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'tinted');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
         {/* JSON-LD for AI crawlers and search engines */}
         <script
           type="application/ld+json"

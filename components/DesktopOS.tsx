@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function DesktopOS({ children }: { children: React.ReactNode }) {
   const [time, setTime] = useState(new Date())
@@ -139,6 +140,7 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             )}
             <span className="hidden sm:inline">{formatDate(time)}</span>
             <span>{formatTime(time)}</span>
+            <ThemeToggle />
           </div>
         </div>
       </div>

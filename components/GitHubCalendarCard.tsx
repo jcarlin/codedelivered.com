@@ -7,7 +7,7 @@ const START_DATE = '2025-12-01'
 
 interface GitHubCalendarCardProps {
   username: string
-  label: string
+  label?: string
   profileUrl: string
 }
 
@@ -54,7 +54,7 @@ export default function GitHubCalendarCard({ username, label, profileUrl }: GitH
   return (
     <div className="gh-card">
       <div className="lab">
-        <span>{label}</span>
+        {label && <span>{label}</span>}
         <a href={profileUrl} target="_blank" rel="noreferrer">
           View profile →
         </a>

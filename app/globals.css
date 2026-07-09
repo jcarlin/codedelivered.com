@@ -784,11 +784,48 @@
   .gh-card .lab a {
     color: var(--accent);
     text-decoration: none;
+    /* keep the link pinned right even when there's no label beside it */
+    margin-left: auto;
   }
   @media (max-width: 860px) {
     .gh-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* theme toggle — 3-state segmented control in the top bar */
+  .theme-seg {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--panel-2) 70%, transparent);
+  }
+  .theme-seg-btn {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  .theme-seg-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  .theme-seg-btn:hover {
+    color: var(--text);
+  }
+  .theme-seg-btn.is-active {
+    color: var(--accent-text);
+    background: var(--accent-tint);
   }
 
   /* contact */
