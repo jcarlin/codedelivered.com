@@ -422,7 +422,7 @@ export const metadata = {
 - Add blog/articles section for thought leadership
 - Client testimonials (when available)
 - More detailed project case studies
-- Dark/light mode toggle (currently dark only)
+- ~~Dark/light mode toggle~~ (done — light/dark/device-default toggle in the top bar, defaults to device setting)
 
 **Priority 3 (Nice to Have):**
 - Analytics dashboard integration

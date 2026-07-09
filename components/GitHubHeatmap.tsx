@@ -17,12 +17,10 @@ export default function GitHubHeatmap() {
         <div className="gh-grid">
           <GitHubCalendarCard
             username="jcarlin"
-            label="Personal — @jcarlin"
             profileUrl="https://github.com/jcarlin"
           />
           <GitHubCalendarCard
             username="jcarlin-OF"
-            label="Work — @jcarlin-OF"
             profileUrl="https://github.com/jcarlin-OF"
           />
         </div>

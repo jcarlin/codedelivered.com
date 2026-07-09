@@ -1,5 +1,6 @@
 import { SOCIAL_LINKS } from '@/lib/constants'
 import Image from 'next/image'
+import ThemeToggle from './ThemeToggle'
 
 export default function Footer() {
   return (
@@ -11,7 +12,8 @@ export default function Footer() {
         borderTop: '1px solid var(--line)',
       }}
     >
-      <div className="flex items-center justify-end h-full px-4">
+      <div className="flex items-center justify-between h-full px-4">
+        <ThemeToggle />
         <div className="flex items-center gap-4 pl-4" style={{ borderLeft: '1px solid var(--line)' }}>
           <a
             href={SOCIAL_LINKS.linkedin}
