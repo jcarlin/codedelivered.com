@@ -113,6 +113,29 @@ export default function DesktopOS({ children }: { children: React.ReactNode }) {
             </span>
           </a>
 
+          {/* Center: section nav (hidden on small screens to keep the bar from wrapping) */}
+          <nav
+            className="hidden md:flex items-center gap-6 text-xs font-mono"
+            aria-label="Sections"
+            style={{ letterSpacing: '0.04em' }}
+          >
+            {[
+              ['Work', '#work'],
+              ['Services', '#services'],
+              ['Security', '#security'],
+              ['Contact', '#contact'],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="opacity-70 hover:opacity-100 transition-opacity no-underline"
+                style={{ color: 'var(--text)' }}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+
           {/* Right: desktop weather / date / time widget */}
           <div
             className="flex items-center gap-3 text-xs font-mono"

@@ -11,6 +11,7 @@ interface ProjectCardProps {
   techStack: string[]
   image?: string
   url?: string
+  urlLabel?: string
   website?: string
   github?: string
   comingSoon?: boolean
@@ -51,6 +52,7 @@ export default function ProjectCard({
   techStack,
   image,
   url,
+  urlLabel = 'Live App',
   website,
   github,
   comingSoon = false,
@@ -137,7 +139,7 @@ export default function ProjectCard({
               {url && (
                 <a href={url} target="_blank" rel="noreferrer">
                   <ExtIcon />
-                  Live App
+                  {urlLabel}
                 </a>
               )}
               {website && (

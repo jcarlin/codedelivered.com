@@ -12,7 +12,7 @@ export default function Services() {
         >
           <span className="eyebrow">What we deliver</span>
           <h2 className="sec-h">
-            Three teams in one, <span className="g">on demand.</span>
+            Three disciplines. <span className="g">One accountable team.</span>
           </h2>
           <p className="sec-sub">
             AI, product engineering, and infrastructure under one roof — scale any of them up or down as your roadmap moves.

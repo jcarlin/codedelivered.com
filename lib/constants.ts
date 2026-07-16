@@ -1,10 +1,3 @@
-export const METRICS = [
-  { n: '5', l: 'production platforms shipped' },
-  { n: '1.4M+', l: 'pages indexed & queried' },
-  { n: '4', l: 'frontier models orchestrated' },
-  { n: '100%', l: 'in your time zone' },
-]
-
 export const SERVICES = [
   {
     n: '01',
@@ -44,6 +37,7 @@ export const PROJECTS = [
     techStack: ['Ubuntu', 'Nvidia Container Toolkit', 'Harbor', 'Ansible', 'Docker', 'Prometheus', 'Grafana', 'Vector DB', 'vLLM', 'CUDA'],
     image: '/projects/vault-ai-1.png',
     url: 'https://vault-ai-frontend.vercel.app/',
+    urlLabel: 'Live demo',
     website: 'https://vaultaisystems.com',
   },
   {
@@ -54,6 +48,7 @@ export const PROJECTS = [
     techStack: ['FastAPI', 'LangGraph', 'Claude AI', 'Qdrant', 'Neo4j', 'React', 'Celery', 'PostgreSQL', 'Docling'],
     image: '/projects/deagle-labs.png',
     url: 'https://nexus-alpha-swart.vercel.app/',
+    urlLabel: 'Live demo',
     website: 'https://www.deaglelabs.com/',
     github: 'https://github.com/jcarlin/NEXUS',
   },
@@ -65,6 +60,7 @@ export const PROJECTS = [
     techStack: ['Next.js', 'SwiftUI', 'FastAPI', 'Google Cloud Vision', 'Claude AI', 'SQLite'],
     image: '/projects/wine-scanner-app.png',
     url: 'https://wine-shelf-scanner.vercel.app/',
+    urlLabel: 'Live demo',
     github: 'https://github.com/jcarlin/wine-shelf-scanner',
   },
   {
@@ -73,12 +69,22 @@ export const PROJECTS = [
     description: 'Custom FP&A workflow platform connecting enterprise SaaS systems through unified API integration.',
     techStack: ['Nest.js', 'Nx', 'Angular 20', 'AWS'],
     image: '/projects/bsci-compass.png',
-    url: 'https://compass.bsci.com',
     website: 'https://www.bostonscientific.com',
   },
 ]
 
-// Kept for future enablement — Governance section is commented out in app/page.tsx.
+export const FOUNDER = {
+  eyebrow: 'Founder-led',
+  name: 'Julian Carlin',
+  role: 'Founder & Principal Engineer',
+  initials: 'JC',
+  photo: '/founder.jpg',
+  bio: [
+    'Julian is a senior full-stack and AI engineer who has shipped every platform on this page — from an enterprise FP&A system at Boston Scientific to a multimodal RAG platform indexing 1.4M+ pages of legal documents.',
+    'He personally leads every CodeDelivered engagement, from first architecture call to production. As projects grow, delivery scales through a vetted bench of senior nearshore engineers working in your time zone, under his direction.',
+  ],
+}
+
 export const GOVERNANCE = {
   eyebrow: 'Built secure by default',
   title: 'Data governance & agentic security, automated',
@@ -93,36 +99,11 @@ export const GOVERNANCE = {
       description: 'Scoped tool permissions, sandboxed execution, and full audit trails on every agent action.',
     },
     {
-      title: 'Compliance-ready',
-      description: 'SOC 2–aligned controls, least-privilege access, and encryption in transit and at rest.',
+      title: 'Security-review ready',
+      description: 'Least-privilege access, encryption in transit and at rest, and audit trails your compliance team can verify.',
     },
   ],
 }
-
-// Kept for future enablement — Testimonials section is commented out in app/page.tsx.
-export const TESTIMONIALS = [
-  {
-    quote:
-      'CodeDelivered shipped our RAG pipeline in six weeks — faster than our internal team scoped it for six months. The quality held up under real load.',
-    name: 'VP of Engineering',
-    role: 'Series B fintech',
-    init: 'VP',
-  },
-  {
-    quote:
-      'The nearshore model just works. Senior engineers, same time zone, zero hand-holding. It felt like an extension of our own team from week one.',
-    name: 'Founder & CTO',
-    role: 'Healthtech startup',
-    init: 'CT',
-  },
-  {
-    quote:
-      'They treated data governance as a first-class requirement, not an afterthought. We passed our security review on the first pass.',
-    name: 'Head of Platform',
-    role: 'Legal-tech scale-up',
-    init: 'HP',
-  },
-]
 
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/julian-c-2a088326',

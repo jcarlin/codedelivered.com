@@ -1,9 +1,9 @@
 import DesktopOS from '@/components/DesktopOS'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
-// import Governance from '@/components/Governance' // disabled — uncomment to enable section
+import Governance from '@/components/Governance'
 import Projects from '@/components/Projects'
-// import Testimonials from '@/components/Testimonials' // disabled — uncomment to enable section
+import Founder from '@/components/Founder'
 import EditorStack from '@/components/EditorStack'
 import GitHubHeatmap from '@/components/GitHubHeatmap'
 import Contact from '@/components/Contact'
@@ -18,19 +18,19 @@ export default function Home() {
         {/* Services extends the hero photo as its background (reveal) */}
         <Services />
 
-        {/* Solid block: projects (governance + testimonials disabled per request) */}
+        {/* Solid block: projects + founder */}
         <div className="cd-page">
-          {/* <Governance /> */}
           <Projects />
-          {/* <Testimonials /> */}
+          <Founder />
         </div>
 
         {/* Reveal block: editor + github show the sunset background */}
         <EditorStack />
         <GitHubHeatmap />
 
-        {/* Solid block: contact */}
+        {/* Solid block: governance + contact */}
         <div className="cd-page">
+          <Governance />
           <Contact />
         </div>
       </main>
