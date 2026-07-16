@@ -35,7 +35,7 @@ export default function Contact() {
         <ContactForm />
         <aside className="contact-aside">
           <h3>Start a conversation</h3>
-          <p>US-led, nearshore-powered. Senior engineers in your time zone, governance baked in from day one.</p>
+          <p>Founder-led, nearshore-powered. You work directly with the founder on every engagement, with governance baked in from day one.</p>
           <div className="contact-list">
             <a
               className="ci"

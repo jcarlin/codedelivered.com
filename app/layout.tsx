@@ -48,9 +48,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // google: 'YOUR_GOOGLE_SEARCH_CONSOLE_CODE', // Add when you verify with Google
-  },
 }
 
 export default function RootLayout({
@@ -68,7 +65,15 @@ export default function RootLayout({
     logo: 'https://codedelivered.com/icon.svg',
     image: 'https://codedelivered.com/og-image.png',
     email: 'info@codedelivered.com',
-    telephone: '', // Add if you want
+    founder: {
+      '@type': 'Person',
+      name: 'Julian Carlin',
+      jobTitle: 'Founder & Principal Engineer',
+      sameAs: [
+        'https://www.linkedin.com/in/julian-c-2a088326',
+        'https://github.com/jcarlin',
+      ],
+    },
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'US',

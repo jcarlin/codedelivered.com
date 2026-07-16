@@ -8,13 +8,13 @@ export default function BackgroundImage() {
     >
       {/* Mobile background */}
       <img
-        src="/projects/desktop-background-mobile.jpg?v=5"
+        src="/projects/desktop-background-mobile.jpg"
         alt=""
         className="block md:hidden w-full h-full object-cover"
       />
       {/* Desktop background */}
       <img
-        src="/projects/desktop-background-desktop.jpg?v=3"
+        src="/projects/desktop-background-desktop.jpg"
         alt=""
         className="hidden md:block w-full h-full object-cover object-[center_10%]"
       />

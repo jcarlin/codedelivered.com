@@ -41,51 +41,7 @@
     color-scheme: light;
   }
 
-  /* ---- Warm editorial paper ----------------------------------------------- */
-  html[data-theme='warm'] {
-    --bg: #fbf9f4;
-    --bg-2: #f4f1ea;
-    --panel: #ffffff;
-    --panel-2: #faf7f1;
-    --panel-grad: linear-gradient(165deg, #ffffff 0%, #fbf9f3 60%, #f6f1e8 100%);
-    --line: rgba(26, 23, 20, 0.1);
-    --line-2: rgba(26, 23, 20, 0.16);
-    --text: #1a1714;
-    --muted: #6b655c;
-    --muted-2: #9b948a;
-    --accent-text: #99680c;
-    --accent-tint: color-mix(in oklch, var(--accent) 16%, transparent);
-    --accent-line: color-mix(in oklch, var(--accent) 50%, transparent);
-    --glow: color-mix(in oklch, var(--accent) 30%, transparent);
-    --shadow: 0 1px 2px rgba(20, 16, 10, 0.04), 0 16px 36px -18px rgba(20, 16, 10, 0.18);
-    --wash: radial-gradient(120% 90% at 12% -10%, color-mix(in oklch, var(--accent) 10%, transparent), transparent 55%);
-    --grain: 0.03;
-    color-scheme: light;
-  }
-
-  /* ---- Crisp minimal ------------------------------------------------------ */
-  html[data-theme='crisp'] {
-    --bg: #ffffff;
-    --bg-2: #f6f7f9;
-    --panel: #ffffff;
-    --panel-2: #fafbfc;
-    --panel-grad: linear-gradient(165deg, #ffffff 0%, #fcfdfe 60%, #f6f7fa 100%);
-    --line: rgba(15, 17, 21, 0.08);
-    --line-2: rgba(15, 17, 21, 0.14);
-    --text: #0f1115;
-    --muted: #5a6172;
-    --muted-2: #9aa0ab;
-    --accent-text: #8a5e0a;
-    --accent-tint: color-mix(in oklch, var(--accent) 13%, transparent);
-    --accent-line: color-mix(in oklch, var(--accent) 44%, transparent);
-    --glow: color-mix(in oklch, var(--accent) 22%, transparent);
-    --shadow: 0 1px 2px rgba(15, 17, 21, 0.04), 0 10px 26px -16px rgba(15, 17, 21, 0.16);
-    --wash: radial-gradient(120% 90% at 12% -10%, rgba(15, 17, 21, 0.018), transparent 55%);
-    --grain: 0.015;
-    color-scheme: light;
-  }
-
-  /* ---- Original dark (kept for comparison) -------------------------------- */
+  /* ---- Dark --------------------------------------------------------------- */
   html[data-theme='dark'] {
     --bg: #0a0a0b;
     --bg-2: #0f0f11;

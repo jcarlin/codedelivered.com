@@ -3,13 +3,13 @@ export default function Hero() {
     <section id="top" className="hero reveal">
       <div className="wrap">
         <span className="hero-eyebrow">
-          <span className="dot"></span>US-led · nearshore talent · your time zone
+          <span className="dot"></span>Founder-led · senior nearshore bench · your time zone
         </span>
         <h1 style={{ marginTop: 22 }}>
           AI Engineering & Full-Stack Development, <span className="g">Delivered.</span>
         </h1>
         <p>
-          Senior US and nearshore engineers building intelligent, scalable products — governed, secure, and shipped on time.
+          Founder-led engineering with senior nearshore talent — intelligent, scalable products, governed, secure, and shipped on time.
         </p>
         <div className="cta">
           <a className="btn" href="#contact">

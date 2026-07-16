@@ -14,6 +14,12 @@ export default function Footer() {
     >
       <div className="flex items-center justify-between h-full px-4">
         <ThemeToggle />
+        <span
+          className="hidden sm:block text-xs font-mono opacity-70"
+          style={{ color: 'var(--text)' }}
+        >
+          © {new Date().getFullYear()} CodeDelivered LLC · {SOCIAL_LINKS.email}
+        </span>
         <div className="flex items-center gap-4 pl-4" style={{ borderLeft: '1px solid var(--line)' }}>
           <a
             href={SOCIAL_LINKS.linkedin}
