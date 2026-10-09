@@ -7,10 +7,10 @@ export default function GitHubHeatmap() {
         <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '70ch' }}>
           <span className="eyebrow">Always shipping</span>
           <h2 className="sec-h">
-            Proof of work, <span className="g">live from GitHub</span>
+            Live from our <span className="g">GitHub</span>
           </h2>
           <p className="sec-sub" style={{ marginInline: 'auto' }}>
-            The founder&rsquo;s contribution activity across client and product work — pulled straight from GitHub.
+            Contribution activity across personal and client work — pulled straight from GitHub.
           </p>
         </div>
 
