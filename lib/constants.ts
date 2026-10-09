@@ -73,18 +73,6 @@ export const PROJECTS = [
   },
 ]
 
-export const FOUNDER = {
-  eyebrow: 'Founder-led',
-  name: 'Julian Carlin',
-  role: 'Founder & Principal Engineer',
-  initials: 'JC',
-  photo: '/founder.jpg',
-  bio: [
-    'Julian is a senior full-stack and AI engineer who has shipped every platform on this page — from an enterprise FP&A system at Boston Scientific to a multimodal RAG platform indexing 1.4M+ pages of legal documents.',
-    'He personally leads every CodeDelivered engagement, from first architecture call to production. As projects grow, delivery scales through a vetted bench of senior nearshore engineers working in your time zone, under his direction.',
-  ],
-}
-
 export const GOVERNANCE = {
   eyebrow: 'Built secure by default',
   title: 'Data governance & agentic security, automated',

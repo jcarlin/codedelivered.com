@@ -65,15 +65,6 @@ export default function RootLayout({
     logo: 'https://codedelivered.com/icon.svg',
     image: 'https://codedelivered.com/og-image.png',
     email: 'info@codedelivered.com',
-    founder: {
-      '@type': 'Person',
-      name: 'Julian Carlin',
-      jobTitle: 'Founder & Principal Engineer',
-      sameAs: [
-        'https://www.linkedin.com/in/julian-c-2a088326',
-        'https://github.com/jcarlin',
-      ],
-    },
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'US',
